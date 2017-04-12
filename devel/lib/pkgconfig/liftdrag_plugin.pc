@@ -1,0 +1,8 @@
+prefix=/home/simongle/simulation/ros_catkin_ws/devel
+
+Name: liftdrag_plugin
+Description: Description of liftdrag_plugin
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/simongle/simulation/ros_catkin_ws/devel/lib 
+Requires: roscpp gazebo_ros

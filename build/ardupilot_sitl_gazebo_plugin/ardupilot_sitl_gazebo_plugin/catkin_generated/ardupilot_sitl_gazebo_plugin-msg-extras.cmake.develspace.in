@@ -1,0 +1,2 @@
+set(ardupilot_sitl_gazebo_plugin_MESSAGE_FILES "")
+set(ardupilot_sitl_gazebo_plugin_SERVICE_FILES "/home/simongle/simulation/ros_catkin_ws/src/ardupilot_sitl_gazebo_plugin/ardupilot_sitl_gazebo_plugin/srv/ReleaseApmLapseLock.srv;/home/simongle/simulation/ros_catkin_ws/src/ardupilot_sitl_gazebo_plugin/ardupilot_sitl_gazebo_plugin/srv/TakeApmLapseLock.srv")

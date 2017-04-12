@@ -1,0 +1,8 @@
+prefix=/home/simongle/simulation/ros_catkin_ws/install
+
+Name: ardupilot_sitl_gazebo_plugin
+Description: Description of ardupilot_sitl_gazebo_plugin
+Version: 1.0.0
+Cflags: -I/home/simongle/simulation/ros_catkin_ws/install/include
+Libs: -L/home/simongle/simulation/ros_catkin_ws/install/lib 
+Requires: roscpp gazebo_ros rotors_gazebo_plugins glog_catkin geometry_msgs mav_msgs sensor_msgs message_runtime

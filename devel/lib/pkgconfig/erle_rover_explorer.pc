@@ -1,0 +1,8 @@
+prefix=/home/simongle/simulation/ros_catkin_ws/devel
+
+Name: erle_rover_explorer
+Description: Description of erle_rover_explorer
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/simongle/simulation/ros_catkin_ws/devel/lib 
+Requires: rospy mavros mav_msgs

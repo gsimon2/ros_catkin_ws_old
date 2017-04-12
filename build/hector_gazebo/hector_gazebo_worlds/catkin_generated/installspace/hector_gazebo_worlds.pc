@@ -1,0 +1,8 @@
+prefix=/home/simongle/simulation/ros_catkin_ws/install
+
+Name: hector_gazebo_worlds
+Description: Description of hector_gazebo_worlds
+Version: 0.3.8
+Cflags: 
+Libs: -L/home/simongle/simulation/ros_catkin_ws/install/lib 
+Requires: 

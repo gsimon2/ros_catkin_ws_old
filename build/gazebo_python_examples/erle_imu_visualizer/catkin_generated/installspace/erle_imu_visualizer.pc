@@ -1,0 +1,8 @@
+prefix=/home/simongle/simulation/ros_catkin_ws/install
+
+Name: erle_imu_visualizer
+Description: Description of erle_imu_visualizer
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/simongle/simulation/ros_catkin_ws/install/lib 
+Requires: sensor_msgs

@@ -1,0 +1,8 @@
+prefix=/home/simongle/simulation/ros_catkin_ws/install
+
+Name: aircraft_plugin
+Description: Description of aircraft_plugin
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/simongle/simulation/ros_catkin_ws/install/lib 
+Requires: roscpp gazebo_ros

@@ -1,0 +1,8 @@
+prefix=/home/simongle/simulation/ros_catkin_ws/devel
+
+Name: ros_erle_cpp_examples_rc
+Description: Description of ros_erle_cpp_examples_rc
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/simongle/simulation/ros_catkin_ws/devel/lib 
+Requires: roscpp mavros_msgs

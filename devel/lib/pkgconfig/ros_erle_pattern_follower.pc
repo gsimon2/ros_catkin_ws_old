@@ -1,0 +1,8 @@
+prefix=/home/simongle/simulation/ros_catkin_ws/devel
+
+Name: ros_erle_pattern_follower
+Description: Description of ros_erle_pattern_follower
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/simongle/simulation/ros_catkin_ws/devel/lib 
+Requires: roscpp image_transport cv_bridge mavros_msgs

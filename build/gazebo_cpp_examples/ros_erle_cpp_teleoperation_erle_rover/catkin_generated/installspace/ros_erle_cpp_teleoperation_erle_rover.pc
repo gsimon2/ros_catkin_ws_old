@@ -1,0 +1,8 @@
+prefix=/home/simongle/simulation/ros_catkin_ws/install
+
+Name: ros_erle_cpp_teleoperation_erle_rover
+Description: Description of ros_erle_cpp_teleoperation_erle_rover
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/simongle/simulation/ros_catkin_ws/install/lib 
+Requires: roscpp mavros_msgs

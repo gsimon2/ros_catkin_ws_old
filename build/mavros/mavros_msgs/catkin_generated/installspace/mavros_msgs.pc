@@ -1,0 +1,8 @@
+prefix=/home/simongle/simulation/ros_catkin_ws/install
+
+Name: mavros_msgs
+Description: Description of mavros_msgs
+Version: 0.17.3
+Cflags: -I/home/simongle/simulation/ros_catkin_ws/install/include
+Libs: -L/home/simongle/simulation/ros_catkin_ws/install/lib 
+Requires: geometry_msgs message_runtime std_msgs
