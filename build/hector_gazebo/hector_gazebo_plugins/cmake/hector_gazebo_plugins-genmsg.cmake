@@ -132,7 +132,9 @@ if(gencpp_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/he
     DESTINATION ${gencpp_INSTALL_DIR}
   )
 endif()
-add_dependencies(hector_gazebo_plugins_generate_messages_cpp geometry_msgs_generate_messages_cpp)
+if(TARGET geometry_msgs_generate_messages_cpp)
+  add_dependencies(hector_gazebo_plugins_generate_messages_cpp geometry_msgs_generate_messages_cpp)
+endif()
 
 if(genlisp_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/hector_gazebo_plugins)
   # install generated code
@@ -141,7 +143,9 @@ if(genlisp_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/
     DESTINATION ${genlisp_INSTALL_DIR}
   )
 endif()
-add_dependencies(hector_gazebo_plugins_generate_messages_lisp geometry_msgs_generate_messages_lisp)
+if(TARGET geometry_msgs_generate_messages_lisp)
+  add_dependencies(hector_gazebo_plugins_generate_messages_lisp geometry_msgs_generate_messages_lisp)
+endif()
 
 if(genpy_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/hector_gazebo_plugins)
   install(CODE "execute_process(COMMAND \"/usr/bin/python\" -m compileall \"${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/hector_gazebo_plugins\")")
@@ -151,4 +155,6 @@ if(genpy_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/hect
     DESTINATION ${genpy_INSTALL_DIR}
   )
 endif()
-add_dependencies(hector_gazebo_plugins_generate_messages_py geometry_msgs_generate_messages_py)
+if(TARGET geometry_msgs_generate_messages_py)
+  add_dependencies(hector_gazebo_plugins_generate_messages_py geometry_msgs_generate_messages_py)
+endif()

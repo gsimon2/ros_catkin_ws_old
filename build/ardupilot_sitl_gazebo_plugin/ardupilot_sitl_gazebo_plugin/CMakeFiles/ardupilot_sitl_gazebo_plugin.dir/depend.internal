@@ -382,18 +382,18 @@ ardupilot_sitl_gazebo_plugin/ardupilot_sitl_gazebo_plugin/CMakeFiles/ardupilot_s
  /usr/include/ignition/math2/ignition/math/Vector3Stats.hh
  /usr/include/ignition/math2/ignition/math/Vector4.hh
  /usr/include/ignition/math2/ignition/math/config.hh
- /usr/include/sdformat-4.2/sdf/Assert.hh
- /usr/include/sdformat-4.2/sdf/Console.hh
- /usr/include/sdformat-4.2/sdf/Converter.hh
- /usr/include/sdformat-4.2/sdf/Element.hh
- /usr/include/sdformat-4.2/sdf/Exception.hh
- /usr/include/sdformat-4.2/sdf/Param.hh
- /usr/include/sdformat-4.2/sdf/SDFImpl.hh
- /usr/include/sdformat-4.2/sdf/Types.hh
- /usr/include/sdformat-4.2/sdf/parser.hh
- /usr/include/sdformat-4.2/sdf/sdf.hh
- /usr/include/sdformat-4.2/sdf/sdf_config.h
- /usr/include/sdformat-4.2/sdf/system_util.hh
+ /usr/include/sdformat-4.3/sdf/Assert.hh
+ /usr/include/sdformat-4.3/sdf/Console.hh
+ /usr/include/sdformat-4.3/sdf/Converter.hh
+ /usr/include/sdformat-4.3/sdf/Element.hh
+ /usr/include/sdformat-4.3/sdf/Exception.hh
+ /usr/include/sdformat-4.3/sdf/Param.hh
+ /usr/include/sdformat-4.3/sdf/SDFImpl.hh
+ /usr/include/sdformat-4.3/sdf/Types.hh
+ /usr/include/sdformat-4.3/sdf/parser.hh
+ /usr/include/sdformat-4.3/sdf/sdf.hh
+ /usr/include/sdformat-4.3/sdf/sdf_config.h
+ /usr/include/sdformat-4.3/sdf/system_util.hh
 ardupilot_sitl_gazebo_plugin/ardupilot_sitl_gazebo_plugin/CMakeFiles/ardupilot_sitl_gazebo_plugin.dir/src/apm_plugin_gazebo_side.cpp.o
  /home/simongle/simulation/ros_catkin_ws/devel/include/ardupilot_sitl_gazebo_plugin/ReleaseApmLapseLock.h
  /home/simongle/simulation/ros_catkin_ws/devel/include/ardupilot_sitl_gazebo_plugin/ReleaseApmLapseLockRequest.h
@@ -772,18 +772,18 @@ ardupilot_sitl_gazebo_plugin/ardupilot_sitl_gazebo_plugin/CMakeFiles/ardupilot_s
  /usr/include/ignition/math2/ignition/math/Vector3Stats.hh
  /usr/include/ignition/math2/ignition/math/Vector4.hh
  /usr/include/ignition/math2/ignition/math/config.hh
- /usr/include/sdformat-4.2/sdf/Assert.hh
- /usr/include/sdformat-4.2/sdf/Console.hh
- /usr/include/sdformat-4.2/sdf/Converter.hh
- /usr/include/sdformat-4.2/sdf/Element.hh
- /usr/include/sdformat-4.2/sdf/Exception.hh
- /usr/include/sdformat-4.2/sdf/Param.hh
- /usr/include/sdformat-4.2/sdf/SDFImpl.hh
- /usr/include/sdformat-4.2/sdf/Types.hh
- /usr/include/sdformat-4.2/sdf/parser.hh
- /usr/include/sdformat-4.2/sdf/sdf.hh
- /usr/include/sdformat-4.2/sdf/sdf_config.h
- /usr/include/sdformat-4.2/sdf/system_util.hh
+ /usr/include/sdformat-4.3/sdf/Assert.hh
+ /usr/include/sdformat-4.3/sdf/Console.hh
+ /usr/include/sdformat-4.3/sdf/Converter.hh
+ /usr/include/sdformat-4.3/sdf/Element.hh
+ /usr/include/sdformat-4.3/sdf/Exception.hh
+ /usr/include/sdformat-4.3/sdf/Param.hh
+ /usr/include/sdformat-4.3/sdf/SDFImpl.hh
+ /usr/include/sdformat-4.3/sdf/Types.hh
+ /usr/include/sdformat-4.3/sdf/parser.hh
+ /usr/include/sdformat-4.3/sdf/sdf.hh
+ /usr/include/sdformat-4.3/sdf/sdf_config.h
+ /usr/include/sdformat-4.3/sdf/system_util.hh
 ardupilot_sitl_gazebo_plugin/ardupilot_sitl_gazebo_plugin/CMakeFiles/ardupilot_sitl_gazebo_plugin.dir/src/apm_plugin_parachute.cpp.o
  /home/simongle/simulation/ros_catkin_ws/devel/include/ardupilot_sitl_gazebo_plugin/ReleaseApmLapseLock.h
  /home/simongle/simulation/ros_catkin_ws/devel/include/ardupilot_sitl_gazebo_plugin/ReleaseApmLapseLockRequest.h
@@ -1162,18 +1162,18 @@ ardupilot_sitl_gazebo_plugin/ardupilot_sitl_gazebo_plugin/CMakeFiles/ardupilot_s
  /usr/include/ignition/math2/ignition/math/Vector3Stats.hh
  /usr/include/ignition/math2/ignition/math/Vector4.hh
  /usr/include/ignition/math2/ignition/math/config.hh
- /usr/include/sdformat-4.2/sdf/Assert.hh
- /usr/include/sdformat-4.2/sdf/Console.hh
- /usr/include/sdformat-4.2/sdf/Converter.hh
- /usr/include/sdformat-4.2/sdf/Element.hh
- /usr/include/sdformat-4.2/sdf/Exception.hh
- /usr/include/sdformat-4.2/sdf/Param.hh
- /usr/include/sdformat-4.2/sdf/SDFImpl.hh
- /usr/include/sdformat-4.2/sdf/Types.hh
- /usr/include/sdformat-4.2/sdf/parser.hh
- /usr/include/sdformat-4.2/sdf/sdf.hh
- /usr/include/sdformat-4.2/sdf/sdf_config.h
- /usr/include/sdformat-4.2/sdf/system_util.hh
+ /usr/include/sdformat-4.3/sdf/Assert.hh
+ /usr/include/sdformat-4.3/sdf/Console.hh
+ /usr/include/sdformat-4.3/sdf/Converter.hh
+ /usr/include/sdformat-4.3/sdf/Element.hh
+ /usr/include/sdformat-4.3/sdf/Exception.hh
+ /usr/include/sdformat-4.3/sdf/Param.hh
+ /usr/include/sdformat-4.3/sdf/SDFImpl.hh
+ /usr/include/sdformat-4.3/sdf/Types.hh
+ /usr/include/sdformat-4.3/sdf/parser.hh
+ /usr/include/sdformat-4.3/sdf/sdf.hh
+ /usr/include/sdformat-4.3/sdf/sdf_config.h
+ /usr/include/sdformat-4.3/sdf/system_util.hh
 ardupilot_sitl_gazebo_plugin/ardupilot_sitl_gazebo_plugin/CMakeFiles/ardupilot_sitl_gazebo_plugin.dir/src/apm_plugin_ros_side.cpp.o
  /home/simongle/simulation/ros_catkin_ws/devel/include/ardupilot_sitl_gazebo_plugin/ReleaseApmLapseLock.h
  /home/simongle/simulation/ros_catkin_ws/devel/include/ardupilot_sitl_gazebo_plugin/ReleaseApmLapseLockRequest.h
@@ -1552,18 +1552,18 @@ ardupilot_sitl_gazebo_plugin/ardupilot_sitl_gazebo_plugin/CMakeFiles/ardupilot_s
  /usr/include/ignition/math2/ignition/math/Vector3Stats.hh
  /usr/include/ignition/math2/ignition/math/Vector4.hh
  /usr/include/ignition/math2/ignition/math/config.hh
- /usr/include/sdformat-4.2/sdf/Assert.hh
- /usr/include/sdformat-4.2/sdf/Console.hh
- /usr/include/sdformat-4.2/sdf/Converter.hh
- /usr/include/sdformat-4.2/sdf/Element.hh
- /usr/include/sdformat-4.2/sdf/Exception.hh
- /usr/include/sdformat-4.2/sdf/Param.hh
- /usr/include/sdformat-4.2/sdf/SDFImpl.hh
- /usr/include/sdformat-4.2/sdf/Types.hh
- /usr/include/sdformat-4.2/sdf/parser.hh
- /usr/include/sdformat-4.2/sdf/sdf.hh
- /usr/include/sdformat-4.2/sdf/sdf_config.h
- /usr/include/sdformat-4.2/sdf/system_util.hh
+ /usr/include/sdformat-4.3/sdf/Assert.hh
+ /usr/include/sdformat-4.3/sdf/Console.hh
+ /usr/include/sdformat-4.3/sdf/Converter.hh
+ /usr/include/sdformat-4.3/sdf/Element.hh
+ /usr/include/sdformat-4.3/sdf/Exception.hh
+ /usr/include/sdformat-4.3/sdf/Param.hh
+ /usr/include/sdformat-4.3/sdf/SDFImpl.hh
+ /usr/include/sdformat-4.3/sdf/Types.hh
+ /usr/include/sdformat-4.3/sdf/parser.hh
+ /usr/include/sdformat-4.3/sdf/sdf.hh
+ /usr/include/sdformat-4.3/sdf/sdf_config.h
+ /usr/include/sdformat-4.3/sdf/system_util.hh
 ardupilot_sitl_gazebo_plugin/ardupilot_sitl_gazebo_plugin/CMakeFiles/ardupilot_sitl_gazebo_plugin.dir/src/ardupilot_sitl_gazebo_plugin.cpp.o
  /home/simongle/simulation/ros_catkin_ws/devel/include/ardupilot_sitl_gazebo_plugin/ReleaseApmLapseLock.h
  /home/simongle/simulation/ros_catkin_ws/devel/include/ardupilot_sitl_gazebo_plugin/ReleaseApmLapseLockRequest.h
@@ -1942,15 +1942,15 @@ ardupilot_sitl_gazebo_plugin/ardupilot_sitl_gazebo_plugin/CMakeFiles/ardupilot_s
  /usr/include/ignition/math2/ignition/math/Vector3Stats.hh
  /usr/include/ignition/math2/ignition/math/Vector4.hh
  /usr/include/ignition/math2/ignition/math/config.hh
- /usr/include/sdformat-4.2/sdf/Assert.hh
- /usr/include/sdformat-4.2/sdf/Console.hh
- /usr/include/sdformat-4.2/sdf/Converter.hh
- /usr/include/sdformat-4.2/sdf/Element.hh
- /usr/include/sdformat-4.2/sdf/Exception.hh
- /usr/include/sdformat-4.2/sdf/Param.hh
- /usr/include/sdformat-4.2/sdf/SDFImpl.hh
- /usr/include/sdformat-4.2/sdf/Types.hh
- /usr/include/sdformat-4.2/sdf/parser.hh
- /usr/include/sdformat-4.2/sdf/sdf.hh
- /usr/include/sdformat-4.2/sdf/sdf_config.h
- /usr/include/sdformat-4.2/sdf/system_util.hh
+ /usr/include/sdformat-4.3/sdf/Assert.hh
+ /usr/include/sdformat-4.3/sdf/Console.hh
+ /usr/include/sdformat-4.3/sdf/Converter.hh
+ /usr/include/sdformat-4.3/sdf/Element.hh
+ /usr/include/sdformat-4.3/sdf/Exception.hh
+ /usr/include/sdformat-4.3/sdf/Param.hh
+ /usr/include/sdformat-4.3/sdf/SDFImpl.hh
+ /usr/include/sdformat-4.3/sdf/Types.hh
+ /usr/include/sdformat-4.3/sdf/parser.hh
+ /usr/include/sdformat-4.3/sdf/sdf.hh
+ /usr/include/sdformat-4.3/sdf/sdf_config.h
+ /usr/include/sdformat-4.3/sdf/system_util.hh

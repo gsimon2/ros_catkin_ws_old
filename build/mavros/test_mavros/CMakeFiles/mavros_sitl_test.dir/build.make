@@ -113,6 +113,9 @@ mavros_sitl_test_EXTERNAL_OBJECTS =
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libmavros_sitl_test.so: /usr/lib/libPocoFoundation.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libmavros_sitl_test.so: /usr/lib/x86_64-linux-gnu/libdl.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libmavros_sitl_test.so: /opt/ros/indigo/lib/libroslib.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/libmavros_sitl_test.so: /opt/ros/indigo/lib/librospack.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/libmavros_sitl_test.so: /usr/lib/x86_64-linux-gnu/libpython2.7.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/libmavros_sitl_test.so: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libmavros_sitl_test.so: /home/simongle/simulation/ros_catkin_ws/devel/lib/libmavconn.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libmavros_sitl_test.so: /opt/ros/indigo/lib/libtf2_ros.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libmavros_sitl_test.so: /opt/ros/indigo/lib/libactionlib.so

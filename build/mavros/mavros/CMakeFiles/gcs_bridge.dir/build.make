@@ -82,11 +82,14 @@ gcs_bridge_EXTERNAL_OBJECTS =
 /home/simongle/simulation/ros_catkin_ws/devel/lib/mavros/gcs_bridge: mavros/mavros/CMakeFiles/gcs_bridge.dir/src/gcs_bridge.cpp.o
 /home/simongle/simulation/ros_catkin_ws/devel/lib/mavros/gcs_bridge: mavros/mavros/CMakeFiles/gcs_bridge.dir/build.make
 /home/simongle/simulation/ros_catkin_ws/devel/lib/mavros/gcs_bridge: /home/simongle/simulation/ros_catkin_ws/devel/lib/libmavros.so
-/home/simongle/simulation/ros_catkin_ws/devel/lib/mavros/gcs_bridge: /usr/lib/x86_64-linux-gnu/libtinyxml.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/mavros/gcs_bridge: /opt/ros/indigo/lib/libclass_loader.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/mavros/gcs_bridge: /usr/lib/libPocoFoundation.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/mavros/gcs_bridge: /usr/lib/x86_64-linux-gnu/libdl.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/mavros/gcs_bridge: /opt/ros/indigo/lib/libroslib.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/mavros/gcs_bridge: /opt/ros/indigo/lib/librospack.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/mavros/gcs_bridge: /usr/lib/x86_64-linux-gnu/libpython2.7.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/mavros/gcs_bridge: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/mavros/gcs_bridge: /usr/lib/x86_64-linux-gnu/libtinyxml.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/mavros/gcs_bridge: /opt/ros/indigo/lib/libtf2_ros.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/mavros/gcs_bridge: /opt/ros/indigo/lib/libactionlib.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/mavros/gcs_bridge: /opt/ros/indigo/lib/libmessage_filters.so

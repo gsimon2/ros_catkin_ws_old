@@ -82,11 +82,14 @@ geotiff_saver_EXTERNAL_OBJECTS =
 /home/simongle/simulation/ros_catkin_ws/devel/lib/hector_geotiff/geotiff_saver: hector_slam/hector_geotiff/CMakeFiles/geotiff_saver.dir/src/geotiff_saver.cpp.o
 /home/simongle/simulation/ros_catkin_ws/devel/lib/hector_geotiff/geotiff_saver: hector_slam/hector_geotiff/CMakeFiles/geotiff_saver.dir/build.make
 /home/simongle/simulation/ros_catkin_ws/devel/lib/hector_geotiff/geotiff_saver: /home/simongle/simulation/ros_catkin_ws/devel/lib/libgeotiff_writer.so
-/home/simongle/simulation/ros_catkin_ws/devel/lib/hector_geotiff/geotiff_saver: /usr/lib/x86_64-linux-gnu/libtinyxml.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/hector_geotiff/geotiff_saver: /opt/ros/indigo/lib/libclass_loader.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/hector_geotiff/geotiff_saver: /usr/lib/libPocoFoundation.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/hector_geotiff/geotiff_saver: /usr/lib/x86_64-linux-gnu/libdl.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/hector_geotiff/geotiff_saver: /opt/ros/indigo/lib/libroslib.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/hector_geotiff/geotiff_saver: /opt/ros/indigo/lib/librospack.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/hector_geotiff/geotiff_saver: /usr/lib/x86_64-linux-gnu/libpython2.7.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/hector_geotiff/geotiff_saver: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/hector_geotiff/geotiff_saver: /usr/lib/x86_64-linux-gnu/libtinyxml.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/hector_geotiff/geotiff_saver: /opt/ros/indigo/lib/libroscpp.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/hector_geotiff/geotiff_saver: /usr/lib/x86_64-linux-gnu/libboost_signals.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/hector_geotiff/geotiff_saver: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so

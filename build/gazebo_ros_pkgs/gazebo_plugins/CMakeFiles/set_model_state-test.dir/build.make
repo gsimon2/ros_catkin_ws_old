@@ -117,11 +117,14 @@ set_model_state__test_EXTERNAL_OBJECTS =
 /home/simongle/simulation/ros_catkin_ws/devel/lib/gazebo_plugins/set_model_state-test: /opt/ros/indigo/lib/libpolled_camera.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/gazebo_plugins/set_model_state-test: /opt/ros/indigo/lib/libimage_transport.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/gazebo_plugins/set_model_state-test: /opt/ros/indigo/lib/libmessage_filters.so
-/home/simongle/simulation/ros_catkin_ws/devel/lib/gazebo_plugins/set_model_state-test: /usr/lib/x86_64-linux-gnu/libtinyxml.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/gazebo_plugins/set_model_state-test: /opt/ros/indigo/lib/libclass_loader.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/gazebo_plugins/set_model_state-test: /usr/lib/libPocoFoundation.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/gazebo_plugins/set_model_state-test: /usr/lib/x86_64-linux-gnu/libdl.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/gazebo_plugins/set_model_state-test: /opt/ros/indigo/lib/libroslib.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/gazebo_plugins/set_model_state-test: /opt/ros/indigo/lib/librospack.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/gazebo_plugins/set_model_state-test: /usr/lib/x86_64-linux-gnu/libpython2.7.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/gazebo_plugins/set_model_state-test: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/gazebo_plugins/set_model_state-test: /usr/lib/x86_64-linux-gnu/libtinyxml.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/gazebo_plugins/set_model_state-test: /opt/ros/indigo/lib/libcamera_info_manager.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/gazebo_plugins/set_model_state-test: /opt/ros/indigo/lib/libroscpp.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/gazebo_plugins/set_model_state-test: /usr/lib/x86_64-linux-gnu/libboost_signals.so

@@ -101,13 +101,11 @@ map_to_image_node_EXTERNAL_OBJECTS =
 /home/simongle/simulation/ros_catkin_ws/devel/lib/hector_compressed_map_transport/map_to_image_node: /usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.2.4.8
 /home/simongle/simulation/ros_catkin_ws/devel/lib/hector_compressed_map_transport/map_to_image_node: /opt/ros/indigo/lib/libimage_transport.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/hector_compressed_map_transport/map_to_image_node: /opt/ros/indigo/lib/libmessage_filters.so
-/home/simongle/simulation/ros_catkin_ws/devel/lib/hector_compressed_map_transport/map_to_image_node: /usr/lib/x86_64-linux-gnu/libtinyxml.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/hector_compressed_map_transport/map_to_image_node: /opt/ros/indigo/lib/libclass_loader.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/hector_compressed_map_transport/map_to_image_node: /usr/lib/libPocoFoundation.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/hector_compressed_map_transport/map_to_image_node: /usr/lib/x86_64-linux-gnu/libdl.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/hector_compressed_map_transport/map_to_image_node: /opt/ros/indigo/lib/libroscpp.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/hector_compressed_map_transport/map_to_image_node: /usr/lib/x86_64-linux-gnu/libboost_signals.so
-/home/simongle/simulation/ros_catkin_ws/devel/lib/hector_compressed_map_transport/map_to_image_node: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/hector_compressed_map_transport/map_to_image_node: /opt/ros/indigo/lib/librosconsole.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/hector_compressed_map_transport/map_to_image_node: /opt/ros/indigo/lib/librosconsole_log4cxx.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/hector_compressed_map_transport/map_to_image_node: /opt/ros/indigo/lib/librosconsole_backend_interface.so
@@ -115,6 +113,11 @@ map_to_image_node_EXTERNAL_OBJECTS =
 /home/simongle/simulation/ros_catkin_ws/devel/lib/hector_compressed_map_transport/map_to_image_node: /usr/lib/x86_64-linux-gnu/libboost_regex.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/hector_compressed_map_transport/map_to_image_node: /opt/ros/indigo/lib/libxmlrpcpp.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/hector_compressed_map_transport/map_to_image_node: /opt/ros/indigo/lib/libroslib.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/hector_compressed_map_transport/map_to_image_node: /opt/ros/indigo/lib/librospack.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/hector_compressed_map_transport/map_to_image_node: /usr/lib/x86_64-linux-gnu/libpython2.7.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/hector_compressed_map_transport/map_to_image_node: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/hector_compressed_map_transport/map_to_image_node: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/hector_compressed_map_transport/map_to_image_node: /usr/lib/x86_64-linux-gnu/libtinyxml.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/hector_compressed_map_transport/map_to_image_node: /opt/ros/indigo/lib/libroscpp_serialization.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/hector_compressed_map_transport/map_to_image_node: /opt/ros/indigo/lib/librostime.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/hector_compressed_map_transport/map_to_image_node: /usr/lib/x86_64-linux-gnu/libboost_date_time.so

@@ -26,7 +26,7 @@ SET(CMAKE_C_TARGET_INCLUDE_PATH
   "/opt/ros/indigo/include"
   "/usr/include/opencv"
   "/usr/include/gazebo-7"
-  "/usr/include/sdformat-4.2"
+  "/usr/include/sdformat-4.3"
   "/usr/include/ignition/math2"
   "/usr/include/OGRE"
   "/usr/include/OGRE/Terrain"

@@ -306,8 +306,12 @@ if(gencpp_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ma
     DESTINATION ${gencpp_INSTALL_DIR}
   )
 endif()
-add_dependencies(mav_msgs_generate_messages_cpp std_msgs_generate_messages_cpp)
-add_dependencies(mav_msgs_generate_messages_cpp geometry_msgs_generate_messages_cpp)
+if(TARGET std_msgs_generate_messages_cpp)
+  add_dependencies(mav_msgs_generate_messages_cpp std_msgs_generate_messages_cpp)
+endif()
+if(TARGET geometry_msgs_generate_messages_cpp)
+  add_dependencies(mav_msgs_generate_messages_cpp geometry_msgs_generate_messages_cpp)
+endif()
 
 if(genlisp_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/mav_msgs)
   # install generated code
@@ -316,8 +320,12 @@ if(genlisp_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/
     DESTINATION ${genlisp_INSTALL_DIR}
   )
 endif()
-add_dependencies(mav_msgs_generate_messages_lisp std_msgs_generate_messages_lisp)
-add_dependencies(mav_msgs_generate_messages_lisp geometry_msgs_generate_messages_lisp)
+if(TARGET std_msgs_generate_messages_lisp)
+  add_dependencies(mav_msgs_generate_messages_lisp std_msgs_generate_messages_lisp)
+endif()
+if(TARGET geometry_msgs_generate_messages_lisp)
+  add_dependencies(mav_msgs_generate_messages_lisp geometry_msgs_generate_messages_lisp)
+endif()
 
 if(genpy_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mav_msgs)
   install(CODE "execute_process(COMMAND \"/usr/bin/python\" -m compileall \"${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mav_msgs\")")
@@ -327,5 +335,9 @@ if(genpy_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/mav_
     DESTINATION ${genpy_INSTALL_DIR}
   )
 endif()
-add_dependencies(mav_msgs_generate_messages_py std_msgs_generate_messages_py)
-add_dependencies(mav_msgs_generate_messages_py geometry_msgs_generate_messages_py)
+if(TARGET std_msgs_generate_messages_py)
+  add_dependencies(mav_msgs_generate_messages_py std_msgs_generate_messages_py)
+endif()
+if(TARGET geometry_msgs_generate_messages_py)
+  add_dependencies(mav_msgs_generate_messages_py geometry_msgs_generate_messages_py)
+endif()

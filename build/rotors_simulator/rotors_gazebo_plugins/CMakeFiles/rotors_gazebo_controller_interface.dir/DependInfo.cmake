@@ -25,7 +25,7 @@ SET(CMAKE_TARGET_LINKED_INFO_FILES
 SET(CMAKE_C_TARGET_INCLUDE_PATH
   "/usr/include/opencv"
   "/usr/include/gazebo-7"
-  "/usr/include/sdformat-4.2"
+  "/usr/include/sdformat-4.3"
   "/usr/include/ignition/math2"
   "/usr/include/OGRE"
   "/home/simongle/simulation/ros_catkin_ws/src/rotors_simulator/rotors_gazebo_plugins/include"

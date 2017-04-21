@@ -183,8 +183,11 @@ ardupilot_sitl_gazebo_plugin_rover_EXTERNAL_OBJECTS =
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libardupilot_sitl_gazebo_plugin_rover.so: ardupilot_sitl_gazebo_plugin/ardupilot_sitl_gazebo_plugin/CMakeFiles/ardupilot_sitl_gazebo_plugin_rover.dir/build.make
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libardupilot_sitl_gazebo_plugin_rover.so: /home/simongle/simulation/ros_catkin_ws/devel/lib/libgazebo_ros_api_plugin.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libardupilot_sitl_gazebo_plugin_rover.so: /home/simongle/simulation/ros_catkin_ws/devel/lib/libgazebo_ros_paths_plugin.so
-/home/simongle/simulation/ros_catkin_ws/devel/lib/libardupilot_sitl_gazebo_plugin_rover.so: /usr/lib/x86_64-linux-gnu/libtinyxml.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libardupilot_sitl_gazebo_plugin_rover.so: /opt/ros/indigo/lib/libroslib.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/libardupilot_sitl_gazebo_plugin_rover.so: /opt/ros/indigo/lib/librospack.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/libardupilot_sitl_gazebo_plugin_rover.so: /usr/lib/x86_64-linux-gnu/libpython2.7.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/libardupilot_sitl_gazebo_plugin_rover.so: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/libardupilot_sitl_gazebo_plugin_rover.so: /usr/lib/x86_64-linux-gnu/libtinyxml.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libardupilot_sitl_gazebo_plugin_rover.so: /opt/ros/indigo/lib/libdynamic_reconfigure_config_init_mutex.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libardupilot_sitl_gazebo_plugin_rover.so: /home/simongle/simulation/ros_catkin_ws/devel/lib/librotors_gazebo_motor_model.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libardupilot_sitl_gazebo_plugin_rover.so: /home/simongle/simulation/ros_catkin_ws/devel/lib/librotors_gazebo_controller_interface.so
@@ -251,7 +254,6 @@ ardupilot_sitl_gazebo_plugin_rover_EXTERNAL_OBJECTS =
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libardupilot_sitl_gazebo_plugin_rover.so: /opt/ros/indigo/lib/libroslz4.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libardupilot_sitl_gazebo_plugin_rover.so: /usr/lib/x86_64-linux-gnu/liblz4.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libardupilot_sitl_gazebo_plugin_rover.so: /opt/ros/indigo/lib/libtopic_tools.so
-/home/simongle/simulation/ros_catkin_ws/devel/lib/libardupilot_sitl_gazebo_plugin_rover.so: /opt/ros/indigo/lib/libroscpp.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libardupilot_sitl_gazebo_plugin_rover.so: /home/simongle/simulation/ros_catkin_ws/devel/lib/libglog.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libardupilot_sitl_gazebo_plugin_rover.so: /usr/lib/x86_64-linux-gnu/libgazebo.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libardupilot_sitl_gazebo_plugin_rover.so: /usr/lib/x86_64-linux-gnu/libgazebo_client.so
@@ -270,6 +272,8 @@ ardupilot_sitl_gazebo_plugin_rover_EXTERNAL_OBJECTS =
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libardupilot_sitl_gazebo_plugin_rover.so: /usr/lib/x86_64-linux-gnu/libgazebo_opende_ou.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libardupilot_sitl_gazebo_plugin_rover.so: /usr/lib/x86_64-linux-gnu/libgazebo_math.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libardupilot_sitl_gazebo_plugin_rover.so: /usr/lib/x86_64-linux-gnu/libgazebo_ccd.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/libardupilot_sitl_gazebo_plugin_rover.so: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/libardupilot_sitl_gazebo_plugin_rover.so: /opt/ros/indigo/lib/libroscpp.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libardupilot_sitl_gazebo_plugin_rover.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libardupilot_sitl_gazebo_plugin_rover.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libardupilot_sitl_gazebo_plugin_rover.so: /opt/ros/indigo/lib/libxmlrpcpp.so
@@ -277,7 +281,6 @@ ardupilot_sitl_gazebo_plugin_rover_EXTERNAL_OBJECTS =
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libardupilot_sitl_gazebo_plugin_rover.so: /opt/ros/indigo/lib/librosconsole_log4cxx.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libardupilot_sitl_gazebo_plugin_rover.so: /opt/ros/indigo/lib/librosconsole_backend_interface.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libardupilot_sitl_gazebo_plugin_rover.so: /usr/lib/liblog4cxx.so
-/home/simongle/simulation/ros_catkin_ws/devel/lib/libardupilot_sitl_gazebo_plugin_rover.so: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libardupilot_sitl_gazebo_plugin_rover.so: /usr/lib/x86_64-linux-gnu/libboost_regex.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libardupilot_sitl_gazebo_plugin_rover.so: /opt/ros/indigo/lib/libroscpp_serialization.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libardupilot_sitl_gazebo_plugin_rover.so: /opt/ros/indigo/lib/librostime.so

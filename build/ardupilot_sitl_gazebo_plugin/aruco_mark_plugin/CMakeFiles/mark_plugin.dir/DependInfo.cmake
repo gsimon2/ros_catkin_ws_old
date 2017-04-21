@@ -21,7 +21,7 @@ SET(CMAKE_TARGET_LINKED_INFO_FILES
 SET(CMAKE_C_TARGET_INCLUDE_PATH
   "/home/simongle/simulation/ros_catkin_ws/src/ardupilot_sitl_gazebo_plugin/aruco_mark_plugin/include"
   "/usr/include/gazebo-7"
-  "/usr/include/sdformat-4.2"
+  "/usr/include/sdformat-4.3"
   "/usr/include/ignition/math2"
   "/usr/include/OGRE"
   )

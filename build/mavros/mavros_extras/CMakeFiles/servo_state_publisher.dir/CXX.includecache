@@ -731,4 +731,8 @@ boost/shared_ptr.hpp
 -
 boost/weak_ptr.hpp
 -
+urdf_model/types.h
+-
+urdf_world/types.h
+-
 

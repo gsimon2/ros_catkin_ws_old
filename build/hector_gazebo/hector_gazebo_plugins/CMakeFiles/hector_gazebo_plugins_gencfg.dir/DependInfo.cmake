@@ -33,7 +33,7 @@ SET(CMAKE_C_TARGET_INCLUDE_PATH
   "/home/simongle/simulation/ros_catkin_ws/src/hector_gazebo/hector_gazebo_plugins/include"
   "/opt/ros/indigo/include"
   "/usr/include/gazebo-7"
-  "/usr/include/sdformat-4.2"
+  "/usr/include/sdformat-4.3"
   "/usr/include/ignition/math2"
   "/usr/include/OGRE"
   )

@@ -84,11 +84,14 @@ hector_geotiff_plugins_EXTERNAL_OBJECTS =
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libhector_geotiff_plugins.so: /home/simongle/simulation/ros_catkin_ws/devel/lib/libgeotiff_writer.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libhector_geotiff_plugins.so: /usr/lib/x86_64-linux-gnu/libQtGui.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libhector_geotiff_plugins.so: /usr/lib/x86_64-linux-gnu/libQtCore.so
-/home/simongle/simulation/ros_catkin_ws/devel/lib/libhector_geotiff_plugins.so: /usr/lib/x86_64-linux-gnu/libtinyxml.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libhector_geotiff_plugins.so: /opt/ros/indigo/lib/libclass_loader.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libhector_geotiff_plugins.so: /usr/lib/libPocoFoundation.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libhector_geotiff_plugins.so: /usr/lib/x86_64-linux-gnu/libdl.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libhector_geotiff_plugins.so: /opt/ros/indigo/lib/libroslib.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/libhector_geotiff_plugins.so: /opt/ros/indigo/lib/librospack.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/libhector_geotiff_plugins.so: /usr/lib/x86_64-linux-gnu/libpython2.7.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/libhector_geotiff_plugins.so: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/libhector_geotiff_plugins.so: /usr/lib/x86_64-linux-gnu/libtinyxml.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libhector_geotiff_plugins.so: /opt/ros/indigo/lib/libroscpp.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libhector_geotiff_plugins.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libhector_geotiff_plugins.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so

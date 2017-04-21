@@ -101,11 +101,14 @@ copter_visualization_EXTERNAL_OBJECTS =
 /home/simongle/simulation/ros_catkin_ws/devel/lib/mavros_extras/copter_visualization: /usr/lib/x86_64-linux-gnu/libopencv_contrib.so.2.4.8
 /home/simongle/simulation/ros_catkin_ws/devel/lib/mavros_extras/copter_visualization: /usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.2.4.8
 /home/simongle/simulation/ros_catkin_ws/devel/lib/mavros_extras/copter_visualization: /home/simongle/simulation/ros_catkin_ws/devel/lib/libmavros.so
-/home/simongle/simulation/ros_catkin_ws/devel/lib/mavros_extras/copter_visualization: /usr/lib/x86_64-linux-gnu/libtinyxml.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/mavros_extras/copter_visualization: /opt/ros/indigo/lib/libclass_loader.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/mavros_extras/copter_visualization: /usr/lib/libPocoFoundation.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/mavros_extras/copter_visualization: /usr/lib/x86_64-linux-gnu/libdl.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/mavros_extras/copter_visualization: /opt/ros/indigo/lib/libroslib.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/mavros_extras/copter_visualization: /opt/ros/indigo/lib/librospack.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/mavros_extras/copter_visualization: /usr/lib/x86_64-linux-gnu/libpython2.7.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/mavros_extras/copter_visualization: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/mavros_extras/copter_visualization: /usr/lib/x86_64-linux-gnu/libtinyxml.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/mavros_extras/copter_visualization: /home/simongle/simulation/ros_catkin_ws/devel/lib/libmavconn.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/mavros_extras/copter_visualization: /opt/ros/indigo/lib/libeigen_conversions.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/mavros_extras/copter_visualization: /opt/ros/indigo/lib/liborocos-kdl.so.1.3.0

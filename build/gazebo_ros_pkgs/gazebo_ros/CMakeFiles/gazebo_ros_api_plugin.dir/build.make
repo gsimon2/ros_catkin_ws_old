@@ -114,6 +114,10 @@ gazebo_ros_api_plugin_EXTERNAL_OBJECTS =
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libgazebo_ros_api_plugin.so: /usr/lib/x86_64-linux-gnu/libsdformat.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libgazebo_ros_api_plugin.so: /usr/lib/x86_64-linux-gnu/libignition-math2.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libgazebo_ros_api_plugin.so: /opt/ros/indigo/lib/libroslib.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/libgazebo_ros_api_plugin.so: /opt/ros/indigo/lib/librospack.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/libgazebo_ros_api_plugin.so: /usr/lib/x86_64-linux-gnu/libpython2.7.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/libgazebo_ros_api_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/libgazebo_ros_api_plugin.so: /usr/lib/x86_64-linux-gnu/libtinyxml.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libgazebo_ros_api_plugin.so: /opt/ros/indigo/lib/libtf.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libgazebo_ros_api_plugin.so: /opt/ros/indigo/lib/libtf2_ros.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libgazebo_ros_api_plugin.so: /opt/ros/indigo/lib/libactionlib.so
@@ -151,6 +155,8 @@ gazebo_ros_api_plugin_EXTERNAL_OBJECTS =
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libgazebo_ros_api_plugin.so: /usr/lib/x86_64-linux-gnu/libsdformat.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libgazebo_ros_api_plugin.so: /usr/lib/x86_64-linux-gnu/libignition-math2.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libgazebo_ros_api_plugin.so: /opt/ros/indigo/lib/libroslib.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/libgazebo_ros_api_plugin.so: /opt/ros/indigo/lib/librospack.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/libgazebo_ros_api_plugin.so: /usr/lib/x86_64-linux-gnu/libpython2.7.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libgazebo_ros_api_plugin.so: /opt/ros/indigo/lib/libtf.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libgazebo_ros_api_plugin.so: /opt/ros/indigo/lib/libtf2_ros.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libgazebo_ros_api_plugin.so: /opt/ros/indigo/lib/libactionlib.so
@@ -167,7 +173,6 @@ gazebo_ros_api_plugin_EXTERNAL_OBJECTS =
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libgazebo_ros_api_plugin.so: /opt/ros/indigo/lib/librostime.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libgazebo_ros_api_plugin.so: /opt/ros/indigo/lib/libcpp_common.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libgazebo_ros_api_plugin.so: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
-/home/simongle/simulation/ros_catkin_ws/devel/lib/libgazebo_ros_api_plugin.so: /usr/lib/x86_64-linux-gnu/libtinyxml.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libgazebo_ros_api_plugin.so: gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_api_plugin.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX shared library /home/simongle/simulation/ros_catkin_ws/devel/lib/libgazebo_ros_api_plugin.so"
 	cd /home/simongle/simulation/ros_catkin_ws/build/gazebo_ros_pkgs/gazebo_ros && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gazebo_ros_api_plugin.dir/link.txt --verbose=$(VERBOSE)

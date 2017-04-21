@@ -83,8 +83,11 @@ aircraft_plugin_EXTERNAL_OBJECTS =
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: ardupilot_sitl_gazebo_plugin/aircraft_plugin/CMakeFiles/aircraft_plugin.dir/build.make
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /home/simongle/simulation/ros_catkin_ws/devel/lib/libgazebo_ros_api_plugin.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /home/simongle/simulation/ros_catkin_ws/devel/lib/libgazebo_ros_paths_plugin.so
-/home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /usr/lib/x86_64-linux-gnu/libtinyxml.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /opt/ros/indigo/lib/libroslib.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /opt/ros/indigo/lib/librospack.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /usr/lib/x86_64-linux-gnu/libpython2.7.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /usr/lib/x86_64-linux-gnu/libtinyxml.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /opt/ros/indigo/lib/libtf.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /opt/ros/indigo/lib/libtf2_ros.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /opt/ros/indigo/lib/libactionlib.so
@@ -138,6 +141,12 @@ aircraft_plugin_EXTERNAL_OBJECTS =
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /usr/lib/x86_64-linux-gnu/libsdformat.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /usr/lib/x86_64-linux-gnu/libignition-math2.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /usr/lib/x86_64-linux-gnu/libignition-math2.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /usr/lib/x86_64-linux-gnu/libtinyxml.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /opt/ros/indigo/lib/libtf.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /opt/ros/indigo/lib/libtf2_ros.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /opt/ros/indigo/lib/libactionlib.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /opt/ros/indigo/lib/libmessage_filters.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /opt/ros/indigo/lib/libroscpp.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /opt/ros/indigo/lib/libxmlrpcpp.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /opt/ros/indigo/lib/libtf2.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /opt/ros/indigo/lib/librosconsole.so
@@ -149,6 +158,13 @@ aircraft_plugin_EXTERNAL_OBJECTS =
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /opt/ros/indigo/lib/librostime.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /opt/ros/indigo/lib/libcpp_common.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /usr/lib/x86_64-linux-gnu/libtinyxml.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /opt/ros/indigo/lib/libtf.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /opt/ros/indigo/lib/libtf2_ros.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /opt/ros/indigo/lib/libactionlib.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /opt/ros/indigo/lib/libmessage_filters.so
+/home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /opt/ros/indigo/lib/libroscpp.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /opt/ros/indigo/lib/libxmlrpcpp.so
@@ -167,7 +183,6 @@ aircraft_plugin_EXTERNAL_OBJECTS =
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /usr/lib/x86_64-linux-gnu/libpthread.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
-/home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_iostreams.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /usr/lib/x86_64-linux-gnu/libprotobuf.so
 /home/simongle/simulation/ros_catkin_ws/devel/lib/libaircraft_plugin.so: /usr/lib/x86_64-linux-gnu/libsdformat.so
