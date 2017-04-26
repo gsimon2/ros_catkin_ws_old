@@ -337,9 +337,11 @@
    <origin xyz="0.2 0 0.15" rpy="0 0 0"/>
  </xacro:generic_camera>
 
+
+
 <xacro:include filename="$(find ardupilot_sitl_gazebo_plugin)/urdf/sensors/lidar_sensor.urdf.xacro" />
  <xacro:lidar_sensor
-   name="sonar2"
+   name="lidar1"
    parent="chassis"
    ros_topic="sonar_front"
    update_rate="10"
@@ -352,6 +354,23 @@
    sensor_mesh="lidar_lite_v2_withRay/meshes/lidar_lite_v2_withRay.dae">
    <origin xyz="0 0 0.4" rpy="0 0 0"/>
  </xacro:lidar_sensor>
+
+<!--
+<xacro:include filename="$(find ardupilot_sitl_gazebo_plugin)/urdf/sensors/sonar_sensor.urdf.xacro" />
+ <xacro:sonar_sensor
+   name="Sonar1"
+   parent="chassis"
+   ros_topic="sonar2"
+   update_rate="10"
+   min_range="0.06"
+   max_range="20.0"
+   field_of_view="${1*M_PI/180}"
+   ray_count="1"
+   sensor_mesh="lidar_lite_v2_withRay/meshes/lidar_lite_v2_withRay.dae">
+   <origin xyz="0.01 0 0.4" rpy="0 0 0"/>
+ </xacro:sonar_sensor>
+-->
+
 
  <xacro:include filename="$(find ardupilot_sitl_gazebo_plugin)/urdf/sensors/kinect.urdf.xacro" />
 
