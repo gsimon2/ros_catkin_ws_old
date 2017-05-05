@@ -80,7 +80,7 @@ sendThread.start()
 i = test_genome_num
 while i > 0:
     data = json.loads(receiver.recv())
-    print("Fitness: {}, Genome ID: {}, Namespace: {}".format(data['fitness'],data['id'],data['ns']))
+    print("Fitness: {}, Genome ID: {}, Host: {}".format(data['fitness'],data['id'],data['ns']))
     i -= 1
  
 # Wait for the send thread to complete.

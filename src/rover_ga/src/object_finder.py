@@ -173,18 +173,22 @@ def simCallback(msg):
 	
 #######################################################################
 
+print('Waiting for gazebo services')
 rospy.wait_for_service('/gazebo/get_world_properties')
 rospy.wait_for_service('/gazebo/reset_world')
 rospy.wait_for_service('/gazebo/reset_simulation')
 rospy.wait_for_service('/gazebo/pause_physics')
 rospy.wait_for_service('/gazebo/unpause_physics')
 
-
+print('Done!')
+print('Setting up ros service proxies')
 
 getWorldProp = rospy.ServiceProxy('/gazebo/get_world_properties', GetWorldProperties)
 resetWorld = rospy.ServiceProxy('/gazebo/reset_world', Empty)
 resetSimulation = rospy.ServiceProxy('/gazebo/reset_simulation', Empty)
 
+print('Done!')
+print('Starting object_finder node and setuping topics')
 rospy.init_node('object_finder', anonymous=True)
     
 rospy.Subscriber("/scan", LaserScan,callback)
@@ -193,6 +197,7 @@ rospy.Subscriber("/scan", LaserScan,callback)
 sim_sub = rospy.Subscriber('simulation_start', std_msgs.msg.Empty, simCallback)
 sim_pub = rospy.Publisher('simulation_result', std_msgs.msg.Float64, queue_size=1)
 
+print('Done! Going into spin.')
 rospy.spin()
 
 

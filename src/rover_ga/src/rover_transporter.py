@@ -27,6 +27,7 @@ rospy.init_node('transporter',anonymous=True)
 pub = rospy.Publisher('simulation_start', std_msgs.msg.Empty, queue_size=1)
 sub = rospy.Subscriber('simulation_result', std_msgs.msg.Float64, callback)
 
+
 while True:
     # Get data off the pipe from the external source
     data = json.loads(receiver.recv())

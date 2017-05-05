@@ -4,7 +4,6 @@
   <arg name="simRate" default="nan"/>
   <!-- Enable simulation clock -->
   <param name="use_sim_time" type="bool" value="true" />
-  <include file="$(find mavros)/launch/apm_sitl.launch"></include>
   
   
   <arg name="respawn_gazebo" default="false"/>
@@ -16,7 +15,6 @@
   <arg name="headless" default="false"/>
   <arg name="gui" default="true"/>
   
-  <!-- <arg name="world_name" default="$(find ardupilot_sitl_gazebo_plugin)/worlds/rover_maze/rover_maze.world"/> -->
   <arg name="world_name" value="$(find ardupilot_sitl_gazebo_plugin)/worlds/single_object/single.world"/>
 
   
@@ -50,40 +48,34 @@
   <arg unless="$(arg debug)" name="script_type" value="gzserver"/>
   <arg     if="$(arg debug)" name="script_type" value="debug"/>
 
-  <!-- send the robot XML to param server -->
-  <param name="robot_description" command="
-    $(find xacro)/xacro.py '$(arg model)'
-    enable_logging:=$(arg enable_logging)
-    enable_ground_truth:=$(arg enable_ground_truth)
-    log_file:=$(arg log_file)"
-  />
+
   <param name="tf_prefix" type="string" value="$(arg tf_prefix)" />
 
  
 <!-- ********************* End Parameter/Argument Defaults ******************************** -->  
 
-
-  <!-- push robot_description to factory and spawn robot in gazebo -->
-  <node name="spawn_rover" pkg="gazebo_ros" type="spawn_model"
-   args="$(arg extra_gazebo_args)
-         -param robot_description
-         -urdf
-         -x $(arg x)
-         -y $(arg y)
-         -z $(arg z)
-         -R $(arg roll)
-         -P $(arg pitch)
-         -Y $(arg yaw)
-         -model $(arg name)"
-   respawn="false" output="screen">
-  </node>
-   
-   
-  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+ 
+   <!-- Start MAVROS -->
+  <!-- Port numbers are incremented by 10 for each instance / Future work pending -->
+  <include file="$(find mavros)/launch/apm_sitl.launch">
+    <arg name="gcs_url" default="udp://127.0.0.1@127.0.0.1:14550" />
+    <arg name="fcu_url" default="tcp://127.0.0.1:5760" />
+  </include>
+  
+  
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="paused" value="true"/>   <!-- value unrelevant due to Arducopter plugin steps --> 
     <arg name="headless" value="$(arg headless)"/>
     <arg name="gui" value="$(arg gui)"/>
     <arg name="world_name" value="$(arg world_name)"/>
   </include>
+  
+  
+   <!-- Load the transporter node -->
+  <node name="rover_transporter" pkg="rover_ga" type="rover_transporter.py" output="screen"></node>
+
+  <!-- Load object finder node -->
+  <node name="object_finder" pkg="rover_ga" type="object_finder.py" output="screen">
+  </node>
   
 </launch>
