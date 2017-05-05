@@ -79,7 +79,7 @@ while True:
 	cmd_str = """xterm -title 'MAVProxy' -hold  -e '
 		source ~/simulation/ros_catkin_ws/devel/setup.bash;
 		cd ~/simulation/ardupilot/APMrover2;
-		echo \"param load /home/simongle/simulation/ardupilot/Tools/Frame_params/3DR_Rover.param\";
+		echo \"param load ~/simulation/ardupilot/Tools/Frame_params/3DR_Rover.param\";
 		echo
 		echo \" (For manual control) - param set SYSID_MYGCS 255\";
 		echo
