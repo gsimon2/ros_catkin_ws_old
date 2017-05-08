@@ -10,6 +10,9 @@ import socket
 
 import std_msgs.msg
 
+from add_sensor_functions import add_lidar
+from add_sensor_functions import copy_base_rover_file
+
 evaluation_result = ''
 
 def callback(data):
@@ -67,12 +70,20 @@ sub = rospy.Subscriber('simulation_result', std_msgs.msg.Float64, callback)
 # Get host name
 str_host_name = socket.gethostname()
 
+
+#Create a copy of the base rover file for this instance
+str_rover_file = copy_base_rover_file(str_host_name)
+
+
 while True:
 	# Get data off the pipe from the external source
 	print('Waiting for data from GA...')
 	data = 'stuff'
 	data = json.loads(receiver.recv())
 	print('Transporter: Received: {}',format(data))
+	
+	#Add sensors based off genome
+	add_lidar(str_rover_file)
 	
 # Start all needed processes
 	# Start MAVProxy
@@ -91,7 +102,7 @@ while True:
 	print('Started MAVProxy!')
 	
 	# Run launch file
-	cmd_str = "xterm -e 'roslaunch rover_ga msu.launch'&"
+	cmd_str = "xterm -e 'roslaunch rover_ga msu.launch model:={}'&".format(str_rover_file)
 	os.system(cmd_str)
 	
 	print('Started launch file!')
@@ -101,7 +112,7 @@ while True:
 	os.system(cmd_str)
 	
 	#Give time for everything to start up
-	time.sleep(6)
+	time.sleep(10)
 	
 	print('Loading received genome into ros param and setting ready msg')
 	# Load the data into a parameter in ROS
@@ -126,6 +137,10 @@ while True:
 	
 	# Tear down this simulation instance
 	cmd_str = "killall -9 gzserver gzclient xterm"
+	
+	#Clean up rover .urdf file for this machine
+	str_rover_file = copy_base_rover_file(str_host_name)
+	
 	#cmd_str = 'pkill xterm'
 	os.system(cmd_str)
 	time.sleep(2)
