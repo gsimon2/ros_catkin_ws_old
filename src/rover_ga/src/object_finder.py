@@ -13,6 +13,7 @@ from gazebo_msgs.srv import GetWorldProperties
 pub = rospy.Publisher('/mavros/rc/override', OverrideRCIn, queue_size=10)
 
 
+max_sim_time = 30
 
 
 #Straight = 1500
@@ -26,6 +27,7 @@ collision_dist = 0.33
 
 start_sim = False
 end_sim = False
+sim_timeout = False
 sim_end_time = [0,0]
 
 def callback(msg):
@@ -129,19 +131,16 @@ def callback(msg):
 def simCallback(msg):
 	global start_sim
 	global end_sim
+	global sim_timeout
+	global max_sim_time
 	
 
 	begin_time = getWorldProp().sim_time 
 	
 	""" Callback to conduct a simulation. """
-	genome_data = rospy.get_param('basicbot_genome')
+	genome_data = rospy.get_param('rover_genome')
 	print("                 Got genome data of:"+str(genome_data))
-	genome = {
-		'center_spin_thresh': genome_data[0],
-		'center_drive_thresh': genome_data[1],
-		'center_stop_thresh': genome_data[2],
-		'stopping_thresh': genome_data[3]
-	}
+	
 	
 	#start the simulation with this genome
 	#to-do send genome to other callback function
@@ -149,20 +148,29 @@ def simCallback(msg):
 
 	#Wait for sim to end
 	while end_sim is False:
+		current_time = getWorldProp().sim_time 
+		total_sim_time = current_time - begin_time
+		if total_sim_time >= max_sim_time:
+			sim_timeout = True
+			end_sim = True
 		pass
 	
-	#print("Sim has ended at {} seconds and {} nanoseconds".format(sim_end_time[0], sim_end_time[1]))
 	
-	
-	current_time = getWorldProp().sim_time 
-	total_sim_time = current_time - begin_time
-	print("Found object at in {} seconds".format(total_sim_time))
-	
+	#Object found in time
+	if	end_sim is True and sim_timeout is False:
+		current_time = getWorldProp().sim_time 
+		total_sim_time = current_time - begin_time
+		print("Found object at in {} seconds".format(total_sim_time))
+	elif end_sim is True and sim_timeout is True:
+		print('Rover failed to find object in time!')
+		total_sim_time = -1
+		
 	
 	# Publish the resulting time on the topic.
 	sim_pub.publish(total_sim_time)
 	start_sim = False
 	end_sim = False
+	sim_timeout = False
     
 	print("Attempting to reset...")
 	resetWorld()

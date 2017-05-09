@@ -34,7 +34,7 @@ while True:
     print(data)
 
     # Load the data into a parameter in ROS
-    rospy.set_param('basicbot_genome', data['genome'])
+    rospy.set_param('rover_genome', data['genome'])
 
     # Send a ready message on the topic to the basicbot node
     pub.publish(std_msgs.msg.Empty())

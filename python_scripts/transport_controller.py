@@ -70,20 +70,26 @@ sub = rospy.Subscriber('simulation_result', std_msgs.msg.Float64, callback)
 # Get host name
 str_host_name = socket.gethostname()
 
-
-#Create a copy of the base rover file for this instance
-str_rover_file = copy_base_rover_file(str_host_name)
-
-
 while True:
 	# Get data off the pipe from the external source
 	print('Waiting for data from GA...')
 	data = 'stuff'
 	data = json.loads(receiver.recv())
-	print('Transporter: Received: {}',format(data))
+	print('Transporter: Received: {}'.format(data))
 	
-	#Add sensors based off genome
-	add_lidar(str_rover_file)
+	
+	#Create a copy of the base rover file for this instance
+	str_rover_file = copy_base_rover_file(str_host_name)
+	
+	
+	#Build rover sensors based off recveived genome
+	for genome_trait in data['genome']:
+		#print('{}\n'.format(genome_trait))
+		if 'lidar' in genome_trait[0]:
+			print("Adding a lidar sensor to the rover")
+			#Add sensors based off genome
+			add_lidar(str_rover_file, genome_trait[1], genome_trait[2])
+	
 	
 # Start all needed processes
 	# Start MAVProxy
@@ -116,7 +122,7 @@ while True:
 	
 	print('Loading received genome into ros param and setting ready msg')
 	# Load the data into a parameter in ROS
-	rospy.set_param('basicbot_genome', data['genome'])
+	rospy.set_param('rover_genome', data['genome'])
 	
 	# Send a ready message on the topic to the basicbot node
 	pub.publish(std_msgs.msg.Empty())
@@ -137,9 +143,6 @@ while True:
 	
 	# Tear down this simulation instance
 	cmd_str = "killall -9 gzserver gzclient xterm"
-	
-	#Clean up rover .urdf file for this machine
-	str_rover_file = copy_base_rover_file(str_host_name)
 	
 	#cmd_str = 'pkill xterm'
 	os.system(cmd_str)

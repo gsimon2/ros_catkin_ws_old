@@ -41,14 +41,14 @@ def add_lidar(str_rover_file, pos = [0,0,0.4], orient = [0,0,0]):
 	update_rate="10"
 	min_range="0.06"
 	max_range="20.0"
-	field_of_view_horizontal="${180*M_PI/180}"
-	field_of_view_vertical="${1*M_PI/180}"
+	field_of_view_horizontal="${{180*M_PI/180}}"
+	field_of_view_vertical="${{1*M_PI/180}}"
 	ray_count_horizontal="542"
 	ray_count_vertical="1"
 	sensor_mesh="lidar_lite_v2_withRay/meshes/lidar_lite_v2_withRay.dae">
-	<origin xyz="0 0 0.4" rpy="0 0 0"/>
+	<origin xyz="{} {} {}" rpy="{} {} {}"/>
 </xacro:lidar_sensor>
-"""
+""".format(pos[0], pos[1], pos[2], orient[0], orient[1], orient[2])
 
 	content = x[0] + lidar_sensor + x[1]
 	

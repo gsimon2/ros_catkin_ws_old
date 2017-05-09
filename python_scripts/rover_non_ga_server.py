@@ -37,14 +37,23 @@ class senderThread(threading.Thread):
         #            float("{0:.6f}".format(random.random()*10.0)), # center_stop_thresh
         #            float("{0:.6f}".format(random.random()*10.0)) # stopping_thresh
         #        ], 'fitness':-1.0}
+        
+        
+        #ind = {'id':0,'genome':[
+        #            float("{0:.6f}".format(5.7)), # center_spin_thresh
+        #            float("{0:.6f}".format(9.4)), # center_drive_thresh
+        #            float("{0:.6f}".format(5.8)), # center_stop_thresh
+        #            float("{0:.6f}".format(2.06)) # stopping_thresh
+        #        ], 'fitness':-1.0}
+                
+        
         ind = {'id':0,'genome':[
-                    float("{0:.6f}".format(5.7)), # center_spin_thresh
-                    float("{0:.6f}".format(9.4)), # center_drive_thresh
-                    float("{0:.6f}".format(5.8)), # center_stop_thresh
-                    float("{0:.6f}".format(2.06)) # stopping_thresh
+                    ['lidar', [0,0,0.4], [0,0,0]]
                 ], 'fitness':-1.0}
+        
         for i in range(self.num_genomes):
             ind['id'] = i+50
+            ind['genome'][0][1][2] = 0.4 + i * 0.1
             # ind = {'id':i,'genome':[
             #         float("{0:.6f}".format(random.random()*10.0)), # center_spin_thresh
             #         float("{0:.6f}".format(9.0 + random.random() * 1.0)), # center_drive_thresh
