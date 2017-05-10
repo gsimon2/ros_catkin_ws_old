@@ -70,6 +70,9 @@ sub = rospy.Subscriber('simulation_result', std_msgs.msg.Float64, callback)
 # Get host name
 str_host_name = socket.gethostname()
 
+last_physical_genome = []
+different_physical_genome = True
+
 while True:
 	# Get data off the pipe from the external source
 	print('Waiting for data from GA...')
@@ -77,48 +80,71 @@ while True:
 	data = json.loads(receiver.recv())
 	print('Transporter: Received: {}'.format(data))
 	
+	#Check for ending msg
+	if data['id'] == -1:
+		break
 	
-	#Create a copy of the base rover file for this instance
-	str_rover_file = copy_base_rover_file(str_host_name)
+	#Check to see if received physical genome is different from last received
+	if data['genome']['physical'] != last_physical_genome:
+		print("		Received different physical genome!")
+		last_physical_genome = data['genome']['physical']
+		different_physical_genome = True
+	else:
+		print("	 	Same pyhsical genome!")
+		different_physical_genome = False
 	
 	
-	#Build rover sensors based off recveived genome
-	for genome_trait in data['genome']['physical']:
-		print('{}\n'.format(genome_trait))
-		if 'lidar' in genome_trait['sensor']:
-			print("Adding a lidar sensor to the rover")
-			#Add sensors based off genome
-			add_lidar(str_rover_file, genome_trait['pos'], genome_trait['orient'])
+	#If Different pyhsical genome tear down everything and restart
+	if different_physical_genome is True:
+		
+		# Tear down this simulation instance
+		cmd_str = "killall -9 gzserver gzclient xterm"
+		os.system(cmd_str)
+		time.sleep(3)
+	
+		#Create a copy of the base rover file for this instance
+		str_rover_file = copy_base_rover_file(str_host_name)
+		
+		#Build rover sensors based off recveived genome
+		for genome_trait in data['genome']['physical']:
+			print('{}\n'.format(genome_trait))
+			if 'lidar' in genome_trait['sensor']:
+				print("Adding a lidar sensor to the rover")
+				#Add sensors based off genome
+				add_lidar(str_rover_file, genome_trait['pos'], genome_trait['orient'])
+	
+		time.sleep(1)
+		# Start all needed processes
+		# Start MAVProxy
+		cmd_str = """xterm -title 'MAVProxy' -hold  -e '
+			source ~/simulation/ros_catkin_ws/devel/setup.bash;
+			cd ~/simulation/ardupilot/APMrover2;
+			echo \"param load ~/simulation/ardupilot/Tools/Frame_params/3DR_Rover.param\";
+			echo
+			echo \" (For manual control) - param set SYSID_MYGCS 255\";
+			echo
+			echo \" (For script control) - param set SYSID_MYGCS 1\";
+			../Tools/autotest/sim_vehicle.sh -j 4 -f Gazebo'&"""
+		os.system(cmd_str)
+		time.sleep(1)
+	
+		print('Started MAVProxy!')
+	
+		# Run launch file
+		cmd_str = "xterm -e 'roslaunch rover_ga msu.launch model:={}'&".format(str_rover_file)
+		os.system(cmd_str)
+	
+		print('Started launch file!')
+	
+		#Start Rover behavior script
+		cmd_str = "xterm -e 'rosrun rover_ga object_finder.py'&"
+		os.system(cmd_str)
+	
+		#Give time for everything to start up
+		time.sleep(10)
+	#End If different physical genome
 	
 	
-# Start all needed processes
-	# Start MAVProxy
-	cmd_str = """xterm -title 'MAVProxy' -hold  -e '
-		source ~/simulation/ros_catkin_ws/devel/setup.bash;
-		cd ~/simulation/ardupilot/APMrover2;
-		echo \"param load ~/simulation/ardupilot/Tools/Frame_params/3DR_Rover.param\";
-		echo
-		echo \" (For manual control) - param set SYSID_MYGCS 255\";
-		echo
-		echo \" (For script control) - param set SYSID_MYGCS 1\";
-		../Tools/autotest/sim_vehicle.sh -j 4 -f Gazebo'&"""
-	os.system(cmd_str)
-	time.sleep(1)
-	
-	print('Started MAVProxy!')
-	
-	# Run launch file
-	cmd_str = "xterm -e 'roslaunch rover_ga msu.launch model:={}'&".format(str_rover_file)
-	os.system(cmd_str)
-	
-	print('Started launch file!')
-	
-	#Start Rover behavior script
-	cmd_str = "xterm -e 'rosrun rover_ga object_finder.py'&"
-	os.system(cmd_str)
-	
-	#Give time for everything to start up
-	time.sleep(10)
 	
 	print('Loading received genome into ros param and setting ready msg')
 	# Load the data into a parameter in ROS
@@ -141,12 +167,11 @@ while True:
 	print (rospy.get_namespace(), evaluation_result)
 	evaluation_result = ''
 	
-	# Tear down this simulation instance
-	cmd_str = "killall -9 gzserver gzclient xterm"
-	
-	#cmd_str = 'pkill xterm'
-	os.system(cmd_str)
-	time.sleep(2)
+#clean up
+# Tear down this simulation instance
+cmd_str = "killall -9 gzserver gzclient xterm rosmaster"
+os.system(cmd_str)
+print('Exiting...')	
 	
     
 
