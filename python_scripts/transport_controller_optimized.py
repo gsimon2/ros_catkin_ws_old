@@ -126,12 +126,12 @@ while True:
 			echo \" (For script control) - param set SYSID_MYGCS 1\";
 			../Tools/autotest/sim_vehicle.sh -j 4 -f Gazebo'&"""
 		os.system(cmd_str)
-		time.sleep(1)
+		time.sleep(4)
 	
 		print('Started MAVProxy!')
 	
 		# Run launch file
-		cmd_str = "xterm -e 'roslaunch rover_ga msu.launch model:={}'&".format(str_rover_file)
+		cmd_str = "xterm -hold -e 'roslaunch rover_ga msu.launch model:={}'&".format(str_rover_file)
 		os.system(cmd_str)
 	
 		print('Started launch file!')
@@ -141,7 +141,7 @@ while True:
 		os.system(cmd_str)
 	
 		#Give time for everything to start up
-		time.sleep(10)
+		time.sleep(15)
 	#End If different physical genome
 	
 	

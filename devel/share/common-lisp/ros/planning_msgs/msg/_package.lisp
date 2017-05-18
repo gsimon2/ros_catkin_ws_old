@@ -1,14 +1,14 @@
 (cl:defpackage planning_msgs-msg
   (:use )
   (:export
-   "<WAYPOINTARRAY>"
-   "WAYPOINTARRAY"
-   "<PLANNINGRESPONSE>"
-   "PLANNINGRESPONSE"
    "<OCTOMAPSCAN>"
    "OCTOMAPSCAN"
+   "<WAYPOINTARRAY>"
+   "WAYPOINTARRAY"
    "<WAYPOINTTYPE>"
    "WAYPOINTTYPE"
+   "<PLANNINGRESPONSE>"
+   "PLANNINGRESPONSE"
    "<WAYPOINT>"
    "WAYPOINT"
   ))

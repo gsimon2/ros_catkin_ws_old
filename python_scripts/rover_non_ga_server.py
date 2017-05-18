@@ -11,7 +11,7 @@ import threading
 
 random.seed(10)
 
-Num_evaluation_workers = 1
+Num_evaluation_workers = 2
  
 class senderThread(threading.Thread):
     def __init__(self, threadID, socket, num_genomes=10):
@@ -83,11 +83,14 @@ class senderThread(threading.Thread):
 context = zmq.Context()
 socket = context.socket(zmq.PUSH)
 #socket.setsockopt(zmq.LINGER, 0)    # discard unsent messages on close
-socket.bind('tcp://127.0.0.1:5000')
+
+socket.bind('tcp://35.9.28.201:5000')
+#socket.bind('tcp://127.0.0.1:5000')
  
 # Setup the socket to read the responses on.
 receiver = context.socket(zmq.PULL)
-receiver.bind('tcp://127.0.0.1:5010')
+receiver.bind('tcp://35.9.28.201:5010')
+#receiver.bind('tcp://127.0.0.1:5010')
  
 print("Press Enter when the workers are ready: ")
 _ = raw_input()

@@ -15,6 +15,7 @@ def copy_base_rover_file(str_host_name):
 	
 	str_rover_file = subprocess.check_output('find ~ -name {}'.format(str_rover_file_name),stderr=subprocess.STDOUT,shell=True) #gets the abs path from OS
 	str_rover_file = str_rover_file.rstrip() #Remove newline character from returned path
+	print("Rover model file: {}".format(str_rover_file))
 	return str_rover_file
 
 
