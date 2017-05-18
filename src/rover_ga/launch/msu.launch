@@ -13,7 +13,7 @@
   <arg name="enable_ground_truth" default="true"/>
   <arg name="log_file" default="rover"/>
   <arg name="headless" default="true"/>
-  <arg name="gui" default="true"/>
+  <arg name="gui" default="false"/>
   
   <!-- <arg name="world_name" default="$(find ardupilot_sitl_gazebo_plugin)/worlds/rover_maze/rover_maze.world"/> -->
   <arg name="world_name" value="$(find ardupilot_sitl_gazebo_plugin)/worlds/single_object/single.world"/>
