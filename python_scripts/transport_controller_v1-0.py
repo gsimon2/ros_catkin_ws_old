@@ -169,7 +169,6 @@ while True:
 				echo \" (For script control) - param set SYSID_MYGCS 1\";
 				../Tools/autotest/sim_vehicle.sh -j 4 -f Gazebo'&"""
 			os.system(cmd_str)
-			time.sleep(5)
 		else:
 			cmd_str = """source ~/simulation/ros_catkin_ws/devel/setup.bash;
 				cd ~/simulation/ardupilot/APMrover2;
@@ -180,7 +179,15 @@ while True:
 				echo \" (For script control) - param set SYSID_MYGCS 1\";
 				../Tools/autotest/sim_vehicle.sh -j 4 -f Gazebo"""
 			mavproxy = subprocess.Popen(cmd_str, stdout=subprocess.PIPE, shell=True)
-			
+		
+		#Give time to start up Mavproxy and Ardupilot (takes a while since Ardupilots sim_vehicle script calls xterm to start the ardupilot scripts)
+		str_PID = ''
+		while(str_PID == ''):
+			try:
+				str_PID = subprocess.check_output('pidof APMrover2.elf',stderr=subprocess.STDOUT,shell=True)
+			except Exception:
+				pass
+			time.sleep(0.5)
 		print('Started MAVProxy!')
 	
 		# Run launch file
