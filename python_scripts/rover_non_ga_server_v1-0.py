@@ -61,7 +61,7 @@ class senderThread(threading.Thread):
             
         for i in range(self.num_genomes/2+1,self.num_genomes):
             ind['id'] = i+50
-            ind['genome']['physical'][0]['pos'][2] = 0.4 + i * 0.05
+            #ind['genome']['physical'][0]['pos'][2] = 0.4 + i * 0.05
             msg = json.dumps(ind)
             print(msg)
             socket.send(msg)

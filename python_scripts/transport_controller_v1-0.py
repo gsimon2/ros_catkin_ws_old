@@ -29,6 +29,8 @@ GA_IP_ADDR = '127.0.0.1'
 
 BEHAVIOR_SCRIPT = 'object_finder.py'
 
+HEADLESS = 'true'
+GUI = 'false'
 
 # Set up arg parser
 parser = argparse.ArgumentParser(description='Individual simulation instance controller / transporter. Receives genomes, makes modifications to personal copy of rover.urdf, and spawns all necessary processes to run the evaluation')
@@ -37,6 +39,7 @@ parser.add_argument('-sp', '--ga_send_port', type=int, help='Port number that th
 parser.add_argument('-rp' , '--ga_recv_port', type=int, help='Port number that the GA is receiving the results on')
 parser.add_argument('-ip' , '--ga_ip_addr', type=str, help='IP address that the GA is running on')
 parser.add_argument('-bs' , '--behavior_script', type=str, help='behaviour script controlling the rover')
+parser.add_argument('-gui', '--graphics', action='store_true', help='Start gazebo gui for each simulation')
 
 args= parser.parse_args()
 
@@ -51,6 +54,11 @@ if args.ga_ip_addr is not None:
 
 if args.behavior_script is not None:
 	BEHAVIOR_SCRIPT = args.behaviour_script
+	
+if args.graphics is True:
+	print('Turning on Gazebo GUI')
+	HEADLESS = 'false'
+	GUI = 'true'
 
 print('Behavior script being used: {}'.format(BEHAVIOR_SCRIPT))
 
@@ -181,7 +189,7 @@ while True:
 			os.system(cmd_str)
 			time.sleep(1)
 		else:
-			cmd_str = 'roslaunch rover_ga msu.launch model:={}'.format(str_rover_file)
+			cmd_str = 'roslaunch rover_ga msu.launch model:={} gui:={} headless:={}'.format(str_rover_file, GUI, HEADLESS)
 			launch_file = subprocess.Popen(cmd_str, stdout=subprocess.PIPE, shell=True)
 		print('Started launch file!')
 	
