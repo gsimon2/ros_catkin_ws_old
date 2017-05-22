@@ -189,6 +189,7 @@ while True:
 				pass
 			time.sleep(0.5)
 		print('Started MAVProxy!')
+		time.sleep(4)
 	
 		# Run launch file
 		if args.debug:
