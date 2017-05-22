@@ -15,7 +15,7 @@ from add_sensor_functions import add_lidar
 from add_sensor_functions import copy_base_rover_file
 
 evaluation_result = ''
-
+    
 def callback(data):
     """ Handle the return of adding information. """
     global evaluation_result
@@ -80,6 +80,15 @@ sub = rospy.Subscriber('simulation_result', std_msgs.msg.Float64, callback)
 # Get host name
 str_host_name = socket.gethostname()
 
+
+# Set up subprocesses
+if args.debug is False:
+	cmd_str = "echo 'starting subprocess'"
+	mavproxy = subprocess.Popen(cmd_str, stdout=subprocess.PIPE, shell=True)
+	launch_file = subprocess.Popen(cmd_str, stdout=subprocess.PIPE, shell=True)
+	rover_behavior = subprocess.Popen(cmd_str, stdout=subprocess.PIPE, shell=True)
+
+
 last_physical_genome = []
 different_physical_genome = True
 recv_first_msg = False
@@ -114,8 +123,15 @@ while True:
 	if different_physical_genome is True:
 		
 		# Tear down this simulation instance
-		cmd_str = "killall -9 gzserver gzclient xterm"
+		cmd_str = "killall -9 gzserver gzclient xterm mavproxy.py"
 		os.system(cmd_str)
+		if args.debug is False:
+			mavproxy.kill()
+			launch_file.kill()
+			rover_behavior.kill()
+			mavproxy.wait()
+			launch_file.wait()
+			rover_behavior.wait()
 		time.sleep(3)
 	
 		#Create a copy of the base rover file for this instance
@@ -209,10 +225,17 @@ while True:
 	
 #clean up
 # Tear down this simulation instance
-cmd_str = "killall -9 gzserver gzclient xterm roscore rosmaster rosout"
+cmd_str = "killall -9 gzserver gzclient xterm roscore rosmaster rosout mavproxy.py"
 os.system(cmd_str)
 cmd_str = "pkill -1 -f {}".format(BEHAVIOR_SCRIPT)
 os.system(cmd_str)
+if args.debug is False:
+	mavproxy.kill()
+	launch_file.kill()
+	rover_behavior.kill()
+	mavproxy.wait()
+	launch_file.wait()
+	rover_behavior.wait()
 end_time = datetime.datetime.now()
 time.sleep(1)
 running_time = end_time - start_time
