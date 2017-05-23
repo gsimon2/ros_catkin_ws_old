@@ -28,6 +28,7 @@ GA_RECV_PORT = 5010
 GA_IP_ADDR = '127.0.0.1'
 
 BEHAVIOR_SCRIPT = 'object_finder.py'
+max_sim_time = 60 #In real-time seconds
 
 HEADLESS = 'true'
 GUI = 'false'
@@ -100,14 +101,23 @@ if args.debug is False:
 last_physical_genome = []
 different_physical_genome = True
 recv_first_msg = False
+dependent_software_crash = False #Some of the software that is called by this script has a tendency to crash (looking at you gazebo), so if it does we need a way to reset it
 
 while True:
-	# Get data off the pipe from the external source
-	print('Waiting for data from GA...')
-	data = 'stuff'
-	data = json.loads(receiver.recv())
-	print('Transporter: Received: {}'.format(data))
 	
+	# Reset the simulation enviroment if one of the dependent programs crashed
+	if dependent_software_crash == True:
+		print('Resetting simulation because of crashed program')
+		cmd_str = "pkill -1 -f {}".format(BEHAVIOR_SCRIPT)
+		os.system(cmd_str)
+		last_physical_genome = []
+	else:
+		# Get data off the pipe from the external source
+		print('Waiting for data from GA...')
+		data = 'stuff'
+		data = json.loads(receiver.recv())
+		print('Transporter: Received: {}'.format(data))
+		
 	#start program timer on first recv'd msg
 	if recv_first_msg == False:
 		start_time = datetime.datetime.now()
@@ -193,7 +203,7 @@ while True:
 	
 		# Run launch file
 		if args.debug:
-			cmd_str = "xterm -hold -e 'roslaunch rover_ga msu.launch model:={}'&".format(str_rover_file)
+			cmd_str = "xterm -hold -e 'roslaunch rover_ga msu.launch model:={} gui:={} headless:={}'&".format(str_rover_file, GUI, HEADLESS)
 			os.system(cmd_str)
 			time.sleep(1)
 		else:
@@ -211,7 +221,7 @@ while True:
 	
 		#Give time for everything to start up
 		if args.debug:
-			time.sleep(15)
+			time.sleep(15) #spawning a bunch of xterms for debugging takes longer than subprocesses
 		else:
 			time.sleep(5)
 	#End If different physical genome
@@ -221,7 +231,7 @@ while True:
 	# Load the data into a parameter in ROS
 	rospy.set_param('rover_genome', data['genome'])
 	
-	# Send a ready message on the topic to the basicbot node
+	# Send a ready message on the topic to the behavior node
 	pub.publish(std_msgs.msg.Empty())
 	
 	print('Done! Entering sleep onto sim evaluation is complete.')
@@ -229,14 +239,27 @@ while True:
 	# Wait for a result to return from the basicbot node
 	# TODO: Remove this spinning while loop with a different construct.
 	# Dependent upon the internal structure of ROS nodes!
+	# TODO: get the dependent software crash reset working wihtout having to send back a -1 result
+	this_eval_start = datetime.datetime.now()
 	while evaluation_result == '':
+		current_time = datetime.datetime.now()
+		if (current_time - this_eval_start).total_seconds() > max_sim_time:
+			evaluation_result = -1
+			last_physical_genome = []
+			#dependent_software_crash = True
+			break
 		time.sleep(0.5)
 	
-	# Transmit the result back to the external source
-	msg = json.dumps({'id':data['id'],'fitness':evaluation_result, 'ns':str_host_name, 'name':rospy.get_name()})
-	sender.send(msg)
-	print (rospy.get_namespace(), evaluation_result)
-	evaluation_result = ''
+	#If crashed program jump to start of loop without sending eval result
+	if dependent_software_crash == True:
+		evaluation_result = ''
+		continue
+	else:
+		# Transmit the result back to the external source
+		msg = json.dumps({'id':data['id'],'fitness':evaluation_result, 'ns':str_host_name, 'name':rospy.get_name()})
+		sender.send(msg)
+		print (rospy.get_namespace(), evaluation_result)
+		evaluation_result = ''
 	
 	
 #clean up

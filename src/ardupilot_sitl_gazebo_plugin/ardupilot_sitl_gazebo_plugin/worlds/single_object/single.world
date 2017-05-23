@@ -25,7 +25,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
     
     
     <physics type="ode">
-      <real_time_update_rate>-1.000000</real_time_update_rate>
+      <real_time_update_rate>0.000000</real_time_update_rate>
     </physics>
     
     
