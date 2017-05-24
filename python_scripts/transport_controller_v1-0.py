@@ -28,7 +28,7 @@ GA_RECV_PORT = 5010
 GA_IP_ADDR = '127.0.0.1'
 
 BEHAVIOR_SCRIPT = 'object_finder.py'
-max_sim_time = 60 #In real-time seconds
+max_sim_time = 20 #In real-time seconds
 
 HEADLESS = 'true'
 GUI = 'false'

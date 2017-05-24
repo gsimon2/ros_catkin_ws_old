@@ -12,12 +12,12 @@
   <arg name="enable_logging" default="true"/>
   <arg name="enable_ground_truth" default="true"/>
   <arg name="log_file" default="rover"/>
-  <arg name="headless" default="true"/>
-  <arg name="gui" default="false"/>
+  <arg name="headless" default="false"/>
+  <arg name="gui" default="true"/>
   
   <!-- <arg name="world_name" default="$(find ardupilot_sitl_gazebo_plugin)/worlds/rover_maze/rover_maze.world"/> -->
   <!-- <arg name="world_name" value="$(find ardupilot_sitl_gazebo_plugin)/worlds/single_object/single.world"/> -->
-  <arg name="world_name" value="$(find rover_ga)/worlds/single_object/single.world"/>
+  <arg name="world_name" value="$(find rover_ga)/worlds/destination/destination.world"/>
 
   
   <env name="GAZEBO_MODEL_PATH" value="$(find drcsim_model_resources)/gazebo_models/environments:$(find ardupilot_sitl_gazebo_plugin)/meshes/meshes_sensors:$(find ardupilot_sitl_gazebo_plugin)/meshes/meshes_outdoor:$(find ardupilot_sitl_gazebo_plugin)/meshes/meshes_warehouse"/>
