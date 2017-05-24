@@ -224,8 +224,12 @@ while True:
 			time.sleep(15) #spawning a bunch of xterms for debugging takes longer than subprocesses
 		else:
 			time.sleep(5)
+			
+		#Adding sleep timer for working on robo1vm1
+		time.sleep(12)
 	#End If different physical genome
 	
+
 	
 	print('Loading received genome into ros param and setting ready msg')
 	# Load the data into a parameter in ROS
