@@ -184,15 +184,7 @@ ardupilot_sitl_gazebo_plugin/TakeApmLapseLock.h
 ardupilot_sitl_gazebo_plugin/ReleaseApmLapseLock.h
 /home/simongle/simulation/ros_catkin_ws/src/ardupilot_sitl_gazebo_plugin/ardupilot_sitl_gazebo_plugin/include/ardupilot_sitl_gazebo_plugin/rover/ardupilot_sitl_gazebo_plugin/ReleaseApmLapseLock.h
 
-/home/simongle/simulation/ros_catkin_ws/src/ardupilot_sitl_gazebo_plugin/ardupilot_sitl_gazebo_plugin/src/SocketAPM.cpp
-../include/ardupilot_sitl_gazebo_plugin/SocketAPM.h
-/home/simongle/simulation/ros_catkin_ws/src/ardupilot_sitl_gazebo_plugin/ardupilot_sitl_gazebo_plugin/include/ardupilot_sitl_gazebo_plugin/SocketAPM.h
-
 /home/simongle/simulation/ros_catkin_ws/src/ardupilot_sitl_gazebo_plugin/ardupilot_sitl_gazebo_plugin/src/rover/apm_plugin_apm_side.cpp
-../include/ardupilot_sitl_gazebo_plugin/rover/ardupilot_sitl_gazebo_plugin.h
-/home/simongle/simulation/ros_catkin_ws/src/ardupilot_sitl_gazebo_plugin/ardupilot_sitl_gazebo_plugin/src/include/ardupilot_sitl_gazebo_plugin/rover/ardupilot_sitl_gazebo_plugin.h
-
-/home/simongle/simulation/ros_catkin_ws/src/ardupilot_sitl_gazebo_plugin/ardupilot_sitl_gazebo_plugin/src/rover/apm_plugin_gazebo_side.cpp
 ../include/ardupilot_sitl_gazebo_plugin/rover/ardupilot_sitl_gazebo_plugin.h
 /home/simongle/simulation/ros_catkin_ws/src/ardupilot_sitl_gazebo_plugin/ardupilot_sitl_gazebo_plugin/src/include/ardupilot_sitl_gazebo_plugin/rover/ardupilot_sitl_gazebo_plugin.h
 

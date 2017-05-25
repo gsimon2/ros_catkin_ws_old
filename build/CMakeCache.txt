@@ -1811,6 +1811,12 @@ polled_camera_DIR:PATH=/opt/ros/indigo/share/polled_camera/cmake
 //The directory containing a CMake configuration file for realtime_tools.
 realtime_tools_DIR:PATH=/opt/ros/indigo/share/realtime_tools/cmake
 
+//Value Computed by CMake
+region_events_BINARY_DIR:STATIC=/home/simongle/simulation/ros_catkin_ws/build/region_events
+
+//Value Computed by CMake
+region_events_SOURCE_DIR:STATIC=/home/simongle/simulation/ros_catkin_ws/src/region_events
+
 //The directory containing a CMake configuration file for resource_retriever.
 resource_retriever_DIR:PATH=/opt/ros/indigo/share/resource_retriever/cmake
 
@@ -2045,6 +2051,12 @@ vision_reconfigure_LIB_DEPENDS:STATIC=general;/opt/ros/indigo/lib/libnodeletlib.
 //The directory containing a CMake configuration file for visualization_msgs.
 visualization_msgs_DIR:PATH=/opt/ros/indigo/share/visualization_msgs/cmake
 
+//Value Computed by CMake
+world_step_BINARY_DIR:STATIC=/home/simongle/simulation/ros_catkin_ws/build/hold_region_event
+
+//Value Computed by CMake
+world_step_SOURCE_DIR:STATIC=/home/simongle/simulation/ros_catkin_ws/src/hold_region_event
+
 //The directory containing a CMake configuration file for xmlrpcpp.
 xmlrpcpp_DIR:PATH=/opt/ros/indigo/share/xmlrpcpp/cmake
 
@@ -2188,7 +2200,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=58
+CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=59
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

@@ -55,10 +55,10 @@ namespace gazebo_plugins
     class ParamDescription : public AbstractParamDescription
     {
     public:
-      ParamDescription(std::string name, std::string type, uint32_t level, 
-          std::string description, std::string edit_method, T CameraSynchronizerConfig::* f) :
-        AbstractParamDescription(name, type, level, description, edit_method),
-        field(f)
+      ParamDescription(std::string a_name, std::string a_type, uint32_t a_level, 
+          std::string a_description, std::string a_edit_method, T CameraSynchronizerConfig::* a_f) :
+        AbstractParamDescription(a_name, a_type, a_level, a_description, a_edit_method),
+        field(a_f)
       {}
 
       T (CameraSynchronizerConfig::* field);
@@ -141,7 +141,7 @@ namespace gazebo_plugins
     class GroupDescription : public AbstractGroupDescription
     {
     public:
-      GroupDescription(std::string name, std::string type, int parent, int id, bool s, T PT::* f) : AbstractGroupDescription(name, type, parent, id, s), field(f)
+      GroupDescription(std::string a_name, std::string a_type, int a_parent, int a_id, bool a_s, T PT::* a_f) : AbstractGroupDescription(a_name, a_type, a_parent, a_id, a_s), field(a_f)
       {
       }
 
@@ -266,33 +266,33 @@ bool camera_reset;
 
 
 
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double projector_rate;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double projector_pulse_length;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double projector_pulse_shift;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       int projector_mode;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       bool prosilica_projector_inhibit;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double stereo_rate;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       int wide_stereo_trig_mode;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       int narrow_stereo_trig_mode;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double forearm_r_rate;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       int forearm_r_trig_mode;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double forearm_l_rate;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       int forearm_l_trig_mode;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double projector_tweak;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       bool camera_reset;
 //#line 218 "/opt/ros/indigo/share/dynamic_reconfigure/cmake/../templates/ConfigType.h.template"
 
@@ -419,6 +419,9 @@ bool camera_reset;
   template <> // Max and min are ignored for strings.
   inline void CameraSynchronizerConfig::ParamDescription<std::string>::clamp(CameraSynchronizerConfig &config, const CameraSynchronizerConfig &max, const CameraSynchronizerConfig &min) const
   {
+    (void) config;
+    (void) min;
+    (void) max;
     return;
   }
 
@@ -429,151 +432,151 @@ bool camera_reset;
     CameraSynchronizerConfigStatics()
     {
 CameraSynchronizerConfig::GroupDescription<CameraSynchronizerConfig::DEFAULT, CameraSynchronizerConfig> Default("Default", "", 0, 0, true, &CameraSynchronizerConfig::groups);
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.projector_rate = 40.0;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.projector_rate = 120.0;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.projector_rate = 60.0;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(CameraSynchronizerConfig::AbstractParamDescriptionConstPtr(new CameraSynchronizerConfig::ParamDescription<double>("projector_rate", "double", 31, "Projector pulse frequency in Hz.", "", &CameraSynchronizerConfig::projector_rate)));
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(CameraSynchronizerConfig::AbstractParamDescriptionConstPtr(new CameraSynchronizerConfig::ParamDescription<double>("projector_rate", "double", 31, "Projector pulse frequency in Hz.", "", &CameraSynchronizerConfig::projector_rate)));
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.projector_pulse_length = 0.001;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.projector_pulse_length = 0.002;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.projector_pulse_length = 0.002;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(CameraSynchronizerConfig::AbstractParamDescriptionConstPtr(new CameraSynchronizerConfig::ParamDescription<double>("projector_pulse_length", "double", 31, "Length of the projector pulses in s. At high currents the hardware may limit the pulse length.", "", &CameraSynchronizerConfig::projector_pulse_length)));
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(CameraSynchronizerConfig::AbstractParamDescriptionConstPtr(new CameraSynchronizerConfig::ParamDescription<double>("projector_pulse_length", "double", 31, "Length of the projector pulses in s. At high currents the hardware may limit the pulse length.", "", &CameraSynchronizerConfig::projector_pulse_length)));
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.projector_pulse_shift = 0.0;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.projector_pulse_shift = 1.0;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.projector_pulse_shift = 0.0;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(CameraSynchronizerConfig::AbstractParamDescriptionConstPtr(new CameraSynchronizerConfig::ParamDescription<double>("projector_pulse_shift", "double", 31, "How far off-center the intermediate projector pulses are. Zero is on-center, one is touching the following pulse.", "", &CameraSynchronizerConfig::projector_pulse_shift)));
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(CameraSynchronizerConfig::AbstractParamDescriptionConstPtr(new CameraSynchronizerConfig::ParamDescription<double>("projector_pulse_shift", "double", 31, "How far off-center the intermediate projector pulses are. Zero is on-center, one is touching the following pulse.", "", &CameraSynchronizerConfig::projector_pulse_shift)));
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.projector_mode = 1;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.projector_mode = 3;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.projector_mode = 2;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(CameraSynchronizerConfig::AbstractParamDescriptionConstPtr(new CameraSynchronizerConfig::ParamDescription<int>("projector_mode", "int", 31, "Indicates whether the projector should be off, on when in use or on all the time.", "{'enum_description': 'The projectors operating mode.', 'enum': [{'srcline': 56, 'description': 'The projector is always off.', 'srcfile': '/home/simongle/simulation/ros_catkin_ws/src/gazebo_ros_pkgs/gazebo_plugins/cfg/CameraSynchronizer.cfg', 'cconsttype': 'const int', 'value': 1, 'ctype': 'int', 'type': 'int', 'name': 'ProjectorOff'}, {'srcline': 57, 'description': 'The projector is on if one of the cameras is using it.', 'srcfile': '/home/simongle/simulation/ros_catkin_ws/src/gazebo_ros_pkgs/gazebo_plugins/cfg/CameraSynchronizer.cfg', 'cconsttype': 'const int', 'value': 2, 'ctype': 'int', 'type': 'int', 'name': 'ProjectorAuto'}, {'srcline': 58, 'description': 'The projector is always on.', 'srcfile': '/home/simongle/simulation/ros_catkin_ws/src/gazebo_ros_pkgs/gazebo_plugins/cfg/CameraSynchronizer.cfg', 'cconsttype': 'const int', 'value': 3, 'ctype': 'int', 'type': 'int', 'name': 'ProjectorOn'}]}", &CameraSynchronizerConfig::projector_mode)));
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(CameraSynchronizerConfig::AbstractParamDescriptionConstPtr(new CameraSynchronizerConfig::ParamDescription<int>("projector_mode", "int", 31, "Indicates whether the projector should be off, on when in use or on all the time.", "{'enum_description': 'The projectors operating mode.', 'enum': [{'srcline': 56, 'description': 'The projector is always off.', 'srcfile': '/home/simongle/simulation/ros_catkin_ws/src/gazebo_ros_pkgs/gazebo_plugins/cfg/CameraSynchronizer.cfg', 'cconsttype': 'const int', 'value': 1, 'ctype': 'int', 'type': 'int', 'name': 'ProjectorOff'}, {'srcline': 57, 'description': 'The projector is on if one of the cameras is using it.', 'srcfile': '/home/simongle/simulation/ros_catkin_ws/src/gazebo_ros_pkgs/gazebo_plugins/cfg/CameraSynchronizer.cfg', 'cconsttype': 'const int', 'value': 2, 'ctype': 'int', 'type': 'int', 'name': 'ProjectorAuto'}, {'srcline': 58, 'description': 'The projector is always on.', 'srcfile': '/home/simongle/simulation/ros_catkin_ws/src/gazebo_ros_pkgs/gazebo_plugins/cfg/CameraSynchronizer.cfg', 'cconsttype': 'const int', 'value': 3, 'ctype': 'int', 'type': 'int', 'name': 'ProjectorOn'}]}", &CameraSynchronizerConfig::projector_mode)));
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.prosilica_projector_inhibit = 0;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.prosilica_projector_inhibit = 1;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.prosilica_projector_inhibit = 0;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(CameraSynchronizerConfig::AbstractParamDescriptionConstPtr(new CameraSynchronizerConfig::ParamDescription<bool>("prosilica_projector_inhibit", "bool", 16, "Indicates if the projector should turn off when the prosilica camera is exposing.", "", &CameraSynchronizerConfig::prosilica_projector_inhibit)));
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(CameraSynchronizerConfig::AbstractParamDescriptionConstPtr(new CameraSynchronizerConfig::ParamDescription<bool>("prosilica_projector_inhibit", "bool", 16, "Indicates if the projector should turn off when the prosilica camera is exposing.", "", &CameraSynchronizerConfig::prosilica_projector_inhibit)));
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.stereo_rate = 1.0;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.stereo_rate = 60.0;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.stereo_rate = 30.0;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(CameraSynchronizerConfig::AbstractParamDescriptionConstPtr(new CameraSynchronizerConfig::ParamDescription<double>("stereo_rate", "double", 3, "Indicates the frame rate for both stereo cameras in Hz. (Gets rounded to suitable divisors of projector_rate.)", "", &CameraSynchronizerConfig::stereo_rate)));
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(CameraSynchronizerConfig::AbstractParamDescriptionConstPtr(new CameraSynchronizerConfig::ParamDescription<double>("stereo_rate", "double", 3, "Indicates the frame rate for both stereo cameras in Hz. (Gets rounded to suitable divisors of projector_rate.)", "", &CameraSynchronizerConfig::stereo_rate)));
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.wide_stereo_trig_mode = 2;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.wide_stereo_trig_mode = 4;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.wide_stereo_trig_mode = 4;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(CameraSynchronizerConfig::AbstractParamDescriptionConstPtr(new CameraSynchronizerConfig::ParamDescription<int>("wide_stereo_trig_mode", "int", 3, "Indicates the triggering mode of the wide stereo camera.", "{'enum_description': 'The triggering mode for the wide camera.', 'enum': [{'srcline': 62, 'description': 'The cameras frequency can be set independently of the projector frequency. There is no deterministic phase relation between projector firing and camera triggering.', 'srcfile': '/home/simongle/simulation/ros_catkin_ws/src/gazebo_ros_pkgs/gazebo_plugins/cfg/CameraSynchronizer.cfg', 'cconsttype': 'const int', 'value': 2, 'ctype': 'int', 'type': 'int', 'name': 'IgnoreProjector'}, {'srcline': 63, 'description': 'The camera always exposes while the projector is on.', 'srcfile': '/home/simongle/simulation/ros_catkin_ws/src/gazebo_ros_pkgs/gazebo_plugins/cfg/CameraSynchronizer.cfg', 'cconsttype': 'const int', 'value': 3, 'ctype': 'int', 'type': 'int', 'name': 'WithProjector'}, {'srcline': 64, 'description': 'The camera always exposes while the projector is off.', 'srcfile': '/home/simongle/simulation/ros_catkin_ws/src/gazebo_ros_pkgs/gazebo_plugins/cfg/CameraSynchronizer.cfg', 'cconsttype': 'const int', 'value': 4, 'ctype': 'int', 'type': 'int', 'name': 'WithoutProjector'}]}", &CameraSynchronizerConfig::wide_stereo_trig_mode)));
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(CameraSynchronizerConfig::AbstractParamDescriptionConstPtr(new CameraSynchronizerConfig::ParamDescription<int>("wide_stereo_trig_mode", "int", 3, "Indicates the triggering mode of the wide stereo camera.", "{'enum_description': 'The triggering mode for the wide camera.', 'enum': [{'srcline': 62, 'description': 'The cameras frequency can be set independently of the projector frequency. There is no deterministic phase relation between projector firing and camera triggering.', 'srcfile': '/home/simongle/simulation/ros_catkin_ws/src/gazebo_ros_pkgs/gazebo_plugins/cfg/CameraSynchronizer.cfg', 'cconsttype': 'const int', 'value': 2, 'ctype': 'int', 'type': 'int', 'name': 'IgnoreProjector'}, {'srcline': 63, 'description': 'The camera always exposes while the projector is on.', 'srcfile': '/home/simongle/simulation/ros_catkin_ws/src/gazebo_ros_pkgs/gazebo_plugins/cfg/CameraSynchronizer.cfg', 'cconsttype': 'const int', 'value': 3, 'ctype': 'int', 'type': 'int', 'name': 'WithProjector'}, {'srcline': 64, 'description': 'The camera always exposes while the projector is off.', 'srcfile': '/home/simongle/simulation/ros_catkin_ws/src/gazebo_ros_pkgs/gazebo_plugins/cfg/CameraSynchronizer.cfg', 'cconsttype': 'const int', 'value': 4, 'ctype': 'int', 'type': 'int', 'name': 'WithoutProjector'}]}", &CameraSynchronizerConfig::wide_stereo_trig_mode)));
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.narrow_stereo_trig_mode = 2;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.narrow_stereo_trig_mode = 5;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.narrow_stereo_trig_mode = 4;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(CameraSynchronizerConfig::AbstractParamDescriptionConstPtr(new CameraSynchronizerConfig::ParamDescription<int>("narrow_stereo_trig_mode", "int", 3, "Indicates the triggering mode of the narrow stereo camera.", "{'enum_description': 'The triggering mode for the narrow camera.', 'enum': [{'srcline': 62, 'description': 'The cameras frequency can be set independently of the projector frequency. There is no deterministic phase relation between projector firing and camera triggering.', 'srcfile': '/home/simongle/simulation/ros_catkin_ws/src/gazebo_ros_pkgs/gazebo_plugins/cfg/CameraSynchronizer.cfg', 'cconsttype': 'const int', 'value': 2, 'ctype': 'int', 'type': 'int', 'name': 'IgnoreProjector'}, {'srcline': 63, 'description': 'The camera always exposes while the projector is on.', 'srcfile': '/home/simongle/simulation/ros_catkin_ws/src/gazebo_ros_pkgs/gazebo_plugins/cfg/CameraSynchronizer.cfg', 'cconsttype': 'const int', 'value': 3, 'ctype': 'int', 'type': 'int', 'name': 'WithProjector'}, {'srcline': 64, 'description': 'The camera always exposes while the projector is off.', 'srcfile': '/home/simongle/simulation/ros_catkin_ws/src/gazebo_ros_pkgs/gazebo_plugins/cfg/CameraSynchronizer.cfg', 'cconsttype': 'const int', 'value': 4, 'ctype': 'int', 'type': 'int', 'name': 'WithoutProjector'}, {'srcline': 65, 'description': 'The camera alternates between frames with and without the projector.', 'srcfile': '/home/simongle/simulation/ros_catkin_ws/src/gazebo_ros_pkgs/gazebo_plugins/cfg/CameraSynchronizer.cfg', 'cconsttype': 'const int', 'value': 5, 'ctype': 'int', 'type': 'int', 'name': 'AlternateProjector'}]}", &CameraSynchronizerConfig::narrow_stereo_trig_mode)));
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(CameraSynchronizerConfig::AbstractParamDescriptionConstPtr(new CameraSynchronizerConfig::ParamDescription<int>("narrow_stereo_trig_mode", "int", 3, "Indicates the triggering mode of the narrow stereo camera.", "{'enum_description': 'The triggering mode for the narrow camera.', 'enum': [{'srcline': 62, 'description': 'The cameras frequency can be set independently of the projector frequency. There is no deterministic phase relation between projector firing and camera triggering.', 'srcfile': '/home/simongle/simulation/ros_catkin_ws/src/gazebo_ros_pkgs/gazebo_plugins/cfg/CameraSynchronizer.cfg', 'cconsttype': 'const int', 'value': 2, 'ctype': 'int', 'type': 'int', 'name': 'IgnoreProjector'}, {'srcline': 63, 'description': 'The camera always exposes while the projector is on.', 'srcfile': '/home/simongle/simulation/ros_catkin_ws/src/gazebo_ros_pkgs/gazebo_plugins/cfg/CameraSynchronizer.cfg', 'cconsttype': 'const int', 'value': 3, 'ctype': 'int', 'type': 'int', 'name': 'WithProjector'}, {'srcline': 64, 'description': 'The camera always exposes while the projector is off.', 'srcfile': '/home/simongle/simulation/ros_catkin_ws/src/gazebo_ros_pkgs/gazebo_plugins/cfg/CameraSynchronizer.cfg', 'cconsttype': 'const int', 'value': 4, 'ctype': 'int', 'type': 'int', 'name': 'WithoutProjector'}, {'srcline': 65, 'description': 'The camera alternates between frames with and without the projector.', 'srcfile': '/home/simongle/simulation/ros_catkin_ws/src/gazebo_ros_pkgs/gazebo_plugins/cfg/CameraSynchronizer.cfg', 'cconsttype': 'const int', 'value': 5, 'ctype': 'int', 'type': 'int', 'name': 'AlternateProjector'}]}", &CameraSynchronizerConfig::narrow_stereo_trig_mode)));
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.forearm_r_rate = 1.0;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.forearm_r_rate = 60.0;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.forearm_r_rate = 30.0;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(CameraSynchronizerConfig::AbstractParamDescriptionConstPtr(new CameraSynchronizerConfig::ParamDescription<double>("forearm_r_rate", "double", 4, "Indicates the frame rate for the right forearm camera in Hz. (Gets rounded to suitable divisors of projector_rate.)", "", &CameraSynchronizerConfig::forearm_r_rate)));
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(CameraSynchronizerConfig::AbstractParamDescriptionConstPtr(new CameraSynchronizerConfig::ParamDescription<double>("forearm_r_rate", "double", 4, "Indicates the frame rate for the right forearm camera in Hz. (Gets rounded to suitable divisors of projector_rate.)", "", &CameraSynchronizerConfig::forearm_r_rate)));
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.forearm_r_trig_mode = 1;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.forearm_r_trig_mode = 4;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.forearm_r_trig_mode = 1;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(CameraSynchronizerConfig::AbstractParamDescriptionConstPtr(new CameraSynchronizerConfig::ParamDescription<int>("forearm_r_trig_mode", "int", 4, "Indicates the triggering mode of the right forearm camera.", "{'enum_description': 'The triggering mode for a forearm camera.', 'enum': [{'srcline': 61, 'description': 'The camera does not use the trigger input.', 'srcfile': '/home/simongle/simulation/ros_catkin_ws/src/gazebo_ros_pkgs/gazebo_plugins/cfg/CameraSynchronizer.cfg', 'cconsttype': 'const int', 'value': 1, 'ctype': 'int', 'type': 'int', 'name': 'InternalTrigger'}, {'srcline': 62, 'description': 'The cameras frequency can be set independently of the projector frequency. There is no deterministic phase relation between projector firing and camera triggering.', 'srcfile': '/home/simongle/simulation/ros_catkin_ws/src/gazebo_ros_pkgs/gazebo_plugins/cfg/CameraSynchronizer.cfg', 'cconsttype': 'const int', 'value': 2, 'ctype': 'int', 'type': 'int', 'name': 'IgnoreProjector'}, {'srcline': 63, 'description': 'The camera always exposes while the projector is on.', 'srcfile': '/home/simongle/simulation/ros_catkin_ws/src/gazebo_ros_pkgs/gazebo_plugins/cfg/CameraSynchronizer.cfg', 'cconsttype': 'const int', 'value': 3, 'ctype': 'int', 'type': 'int', 'name': 'WithProjector'}, {'srcline': 64, 'description': 'The camera always exposes while the projector is off.', 'srcfile': '/home/simongle/simulation/ros_catkin_ws/src/gazebo_ros_pkgs/gazebo_plugins/cfg/CameraSynchronizer.cfg', 'cconsttype': 'const int', 'value': 4, 'ctype': 'int', 'type': 'int', 'name': 'WithoutProjector'}]}", &CameraSynchronizerConfig::forearm_r_trig_mode)));
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(CameraSynchronizerConfig::AbstractParamDescriptionConstPtr(new CameraSynchronizerConfig::ParamDescription<int>("forearm_r_trig_mode", "int", 4, "Indicates the triggering mode of the right forearm camera.", "{'enum_description': 'The triggering mode for a forearm camera.', 'enum': [{'srcline': 61, 'description': 'The camera does not use the trigger input.', 'srcfile': '/home/simongle/simulation/ros_catkin_ws/src/gazebo_ros_pkgs/gazebo_plugins/cfg/CameraSynchronizer.cfg', 'cconsttype': 'const int', 'value': 1, 'ctype': 'int', 'type': 'int', 'name': 'InternalTrigger'}, {'srcline': 62, 'description': 'The cameras frequency can be set independently of the projector frequency. There is no deterministic phase relation between projector firing and camera triggering.', 'srcfile': '/home/simongle/simulation/ros_catkin_ws/src/gazebo_ros_pkgs/gazebo_plugins/cfg/CameraSynchronizer.cfg', 'cconsttype': 'const int', 'value': 2, 'ctype': 'int', 'type': 'int', 'name': 'IgnoreProjector'}, {'srcline': 63, 'description': 'The camera always exposes while the projector is on.', 'srcfile': '/home/simongle/simulation/ros_catkin_ws/src/gazebo_ros_pkgs/gazebo_plugins/cfg/CameraSynchronizer.cfg', 'cconsttype': 'const int', 'value': 3, 'ctype': 'int', 'type': 'int', 'name': 'WithProjector'}, {'srcline': 64, 'description': 'The camera always exposes while the projector is off.', 'srcfile': '/home/simongle/simulation/ros_catkin_ws/src/gazebo_ros_pkgs/gazebo_plugins/cfg/CameraSynchronizer.cfg', 'cconsttype': 'const int', 'value': 4, 'ctype': 'int', 'type': 'int', 'name': 'WithoutProjector'}]}", &CameraSynchronizerConfig::forearm_r_trig_mode)));
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.forearm_l_rate = 1.0;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.forearm_l_rate = 60.0;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.forearm_l_rate = 30.0;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(CameraSynchronizerConfig::AbstractParamDescriptionConstPtr(new CameraSynchronizerConfig::ParamDescription<double>("forearm_l_rate", "double", 8, "Indicates the frame rate for the left forearm camera in Hz. (Gets rounded to suitable divisors of projector_rate.)", "", &CameraSynchronizerConfig::forearm_l_rate)));
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(CameraSynchronizerConfig::AbstractParamDescriptionConstPtr(new CameraSynchronizerConfig::ParamDescription<double>("forearm_l_rate", "double", 8, "Indicates the frame rate for the left forearm camera in Hz. (Gets rounded to suitable divisors of projector_rate.)", "", &CameraSynchronizerConfig::forearm_l_rate)));
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.forearm_l_trig_mode = 1;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.forearm_l_trig_mode = 4;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.forearm_l_trig_mode = 1;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(CameraSynchronizerConfig::AbstractParamDescriptionConstPtr(new CameraSynchronizerConfig::ParamDescription<int>("forearm_l_trig_mode", "int", 8, "Indicates the triggering mode of the left forearm camera.", "{'enum_description': 'The triggering mode for a forearm camera.', 'enum': [{'srcline': 61, 'description': 'The camera does not use the trigger input.', 'srcfile': '/home/simongle/simulation/ros_catkin_ws/src/gazebo_ros_pkgs/gazebo_plugins/cfg/CameraSynchronizer.cfg', 'cconsttype': 'const int', 'value': 1, 'ctype': 'int', 'type': 'int', 'name': 'InternalTrigger'}, {'srcline': 62, 'description': 'The cameras frequency can be set independently of the projector frequency. There is no deterministic phase relation between projector firing and camera triggering.', 'srcfile': '/home/simongle/simulation/ros_catkin_ws/src/gazebo_ros_pkgs/gazebo_plugins/cfg/CameraSynchronizer.cfg', 'cconsttype': 'const int', 'value': 2, 'ctype': 'int', 'type': 'int', 'name': 'IgnoreProjector'}, {'srcline': 63, 'description': 'The camera always exposes while the projector is on.', 'srcfile': '/home/simongle/simulation/ros_catkin_ws/src/gazebo_ros_pkgs/gazebo_plugins/cfg/CameraSynchronizer.cfg', 'cconsttype': 'const int', 'value': 3, 'ctype': 'int', 'type': 'int', 'name': 'WithProjector'}, {'srcline': 64, 'description': 'The camera always exposes while the projector is off.', 'srcfile': '/home/simongle/simulation/ros_catkin_ws/src/gazebo_ros_pkgs/gazebo_plugins/cfg/CameraSynchronizer.cfg', 'cconsttype': 'const int', 'value': 4, 'ctype': 'int', 'type': 'int', 'name': 'WithoutProjector'}]}", &CameraSynchronizerConfig::forearm_l_trig_mode)));
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(CameraSynchronizerConfig::AbstractParamDescriptionConstPtr(new CameraSynchronizerConfig::ParamDescription<int>("forearm_l_trig_mode", "int", 8, "Indicates the triggering mode of the left forearm camera.", "{'enum_description': 'The triggering mode for a forearm camera.', 'enum': [{'srcline': 61, 'description': 'The camera does not use the trigger input.', 'srcfile': '/home/simongle/simulation/ros_catkin_ws/src/gazebo_ros_pkgs/gazebo_plugins/cfg/CameraSynchronizer.cfg', 'cconsttype': 'const int', 'value': 1, 'ctype': 'int', 'type': 'int', 'name': 'InternalTrigger'}, {'srcline': 62, 'description': 'The cameras frequency can be set independently of the projector frequency. There is no deterministic phase relation between projector firing and camera triggering.', 'srcfile': '/home/simongle/simulation/ros_catkin_ws/src/gazebo_ros_pkgs/gazebo_plugins/cfg/CameraSynchronizer.cfg', 'cconsttype': 'const int', 'value': 2, 'ctype': 'int', 'type': 'int', 'name': 'IgnoreProjector'}, {'srcline': 63, 'description': 'The camera always exposes while the projector is on.', 'srcfile': '/home/simongle/simulation/ros_catkin_ws/src/gazebo_ros_pkgs/gazebo_plugins/cfg/CameraSynchronizer.cfg', 'cconsttype': 'const int', 'value': 3, 'ctype': 'int', 'type': 'int', 'name': 'WithProjector'}, {'srcline': 64, 'description': 'The camera always exposes while the projector is off.', 'srcfile': '/home/simongle/simulation/ros_catkin_ws/src/gazebo_ros_pkgs/gazebo_plugins/cfg/CameraSynchronizer.cfg', 'cconsttype': 'const int', 'value': 4, 'ctype': 'int', 'type': 'int', 'name': 'WithoutProjector'}]}", &CameraSynchronizerConfig::forearm_l_trig_mode)));
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.projector_tweak = -0.1;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.projector_tweak = 0.1;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.projector_tweak = 0.0;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(CameraSynchronizerConfig::AbstractParamDescriptionConstPtr(new CameraSynchronizerConfig::ParamDescription<double>("projector_tweak", "double", 31, "Adds a time shift in seconds to the projector timing. Useful for debugging but not in normal use.", "", &CameraSynchronizerConfig::projector_tweak)));
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(CameraSynchronizerConfig::AbstractParamDescriptionConstPtr(new CameraSynchronizerConfig::ParamDescription<double>("projector_tweak", "double", 31, "Adds a time shift in seconds to the projector timing. Useful for debugging but not in normal use.", "", &CameraSynchronizerConfig::projector_tweak)));
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.camera_reset = 0;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.camera_reset = 1;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.camera_reset = 0;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(CameraSynchronizerConfig::AbstractParamDescriptionConstPtr(new CameraSynchronizerConfig::ParamDescription<bool>("camera_reset", "bool", 31, "Does a hard reset of all the cameras using a long pulse on the trigger line. This parameter resets itself to false after 3 to 4 seconds.", "", &CameraSynchronizerConfig::camera_reset)));
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(CameraSynchronizerConfig::AbstractParamDescriptionConstPtr(new CameraSynchronizerConfig::ParamDescription<bool>("camera_reset", "bool", 31, "Does a hard reset of all the cameras using a long pulse on the trigger line. This parameter resets itself to false after 3 to 4 seconds.", "", &CameraSynchronizerConfig::camera_reset)));
-//#line 235 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 246 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.convertParams();
-//#line 235 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 246 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __group_descriptions__.push_back(CameraSynchronizerConfig::AbstractGroupDescriptionConstPtr(new CameraSynchronizerConfig::GroupDescription<CameraSynchronizerConfig::DEFAULT, CameraSynchronizerConfig>(Default)));
-//#line 353 "/opt/ros/indigo/share/dynamic_reconfigure/cmake/../templates/ConfigType.h.template"
+//#line 356 "/opt/ros/indigo/share/dynamic_reconfigure/cmake/../templates/ConfigType.h.template"
 
       for (std::vector<CameraSynchronizerConfig::AbstractGroupDescriptionConstPtr>::const_iterator i = __group_descriptions__.begin(); i != __group_descriptions__.end(); ++i)
       {

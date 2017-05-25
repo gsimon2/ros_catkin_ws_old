@@ -28,7 +28,7 @@ GA_RECV_PORT = 5010
 GA_IP_ADDR = '127.0.0.1'
 
 BEHAVIOR_SCRIPT = 'object_finder.py'
-max_sim_time = 20 #In real-time seconds
+max_sim_time = 200 #In real-time seconds
 
 HEADLESS = 'true'
 GUI = 'false'
@@ -118,10 +118,7 @@ while True:
 		data = json.loads(receiver.recv())
 		print('Transporter: Received: {}'.format(data))
 		
-	#start program timer on first recv'd msg
-	if recv_first_msg == False:
-		start_time = datetime.datetime.now()
-		recv_first_msg = True
+
 	
 	#Check for ending msg
 	if data['id'] == -1:
@@ -226,6 +223,10 @@ while True:
 			time.sleep(5)
 	#End If different physical genome
 	
+	#start program timer on first recv'd msg
+	if recv_first_msg == False:
+		start_time = datetime.datetime.now()
+		recv_first_msg = True
 	
 	print('Loading received genome into ros param and setting ready msg')
 	# Load the data into a parameter in ROS

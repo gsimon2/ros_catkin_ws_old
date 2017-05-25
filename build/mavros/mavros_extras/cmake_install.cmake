@@ -50,8 +50,8 @@ ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unsp
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/mavros_extras" TYPE PROGRAM FILES
     "/home/simongle/simulation/ros_catkin_ws/src/mavros/mavros_extras/scripts/mavteleop"
-    "/home/simongle/simulation/ros_catkin_ws/src/mavros/mavros_extras/scripts/mavkbteleop"
     "/home/simongle/simulation/ros_catkin_ws/src/mavros/mavros_extras/scripts/mavftpfuse"
+    "/home/simongle/simulation/ros_catkin_ws/src/mavros/mavros_extras/scripts/mavkbteleop"
     )
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 

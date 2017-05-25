@@ -3426,6 +3426,123 @@ liftdrag_plugin/fast:
 .PHONY : liftdrag_plugin/fast
 
 #=============================================================================
+# Target rules for targets named _region_events_generate_messages_check_deps_region_events
+
+# Build rule for target.
+_region_events_generate_messages_check_deps_region_events: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _region_events_generate_messages_check_deps_region_events
+.PHONY : _region_events_generate_messages_check_deps_region_events
+
+# fast build rule for target.
+_region_events_generate_messages_check_deps_region_events/fast:
+	$(MAKE) -f region_events/CMakeFiles/_region_events_generate_messages_check_deps_region_events.dir/build.make region_events/CMakeFiles/_region_events_generate_messages_check_deps_region_events.dir/build
+.PHONY : _region_events_generate_messages_check_deps_region_events/fast
+
+#=============================================================================
+# Target rules for targets named region_events_gencpp
+
+# Build rule for target.
+region_events_gencpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 region_events_gencpp
+.PHONY : region_events_gencpp
+
+# fast build rule for target.
+region_events_gencpp/fast:
+	$(MAKE) -f region_events/CMakeFiles/region_events_gencpp.dir/build.make region_events/CMakeFiles/region_events_gencpp.dir/build
+.PHONY : region_events_gencpp/fast
+
+#=============================================================================
+# Target rules for targets named region_events_generate_messages
+
+# Build rule for target.
+region_events_generate_messages: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 region_events_generate_messages
+.PHONY : region_events_generate_messages
+
+# fast build rule for target.
+region_events_generate_messages/fast:
+	$(MAKE) -f region_events/CMakeFiles/region_events_generate_messages.dir/build.make region_events/CMakeFiles/region_events_generate_messages.dir/build
+.PHONY : region_events_generate_messages/fast
+
+#=============================================================================
+# Target rules for targets named region_events_generate_messages_cpp
+
+# Build rule for target.
+region_events_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 region_events_generate_messages_cpp
+.PHONY : region_events_generate_messages_cpp
+
+# fast build rule for target.
+region_events_generate_messages_cpp/fast:
+	$(MAKE) -f region_events/CMakeFiles/region_events_generate_messages_cpp.dir/build.make region_events/CMakeFiles/region_events_generate_messages_cpp.dir/build
+.PHONY : region_events_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named region_events_generate_messages_lisp
+
+# Build rule for target.
+region_events_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 region_events_generate_messages_lisp
+.PHONY : region_events_generate_messages_lisp
+
+# fast build rule for target.
+region_events_generate_messages_lisp/fast:
+	$(MAKE) -f region_events/CMakeFiles/region_events_generate_messages_lisp.dir/build.make region_events/CMakeFiles/region_events_generate_messages_lisp.dir/build
+.PHONY : region_events_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named region_events_generate_messages_py
+
+# Build rule for target.
+region_events_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 region_events_generate_messages_py
+.PHONY : region_events_generate_messages_py
+
+# fast build rule for target.
+region_events_generate_messages_py/fast:
+	$(MAKE) -f region_events/CMakeFiles/region_events_generate_messages_py.dir/build.make region_events/CMakeFiles/region_events_generate_messages_py.dir/build
+.PHONY : region_events_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named region_events_genlisp
+
+# Build rule for target.
+region_events_genlisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 region_events_genlisp
+.PHONY : region_events_genlisp
+
+# fast build rule for target.
+region_events_genlisp/fast:
+	$(MAKE) -f region_events/CMakeFiles/region_events_genlisp.dir/build.make region_events/CMakeFiles/region_events_genlisp.dir/build
+.PHONY : region_events_genlisp/fast
+
+#=============================================================================
+# Target rules for targets named region_events_genpy
+
+# Build rule for target.
+region_events_genpy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 region_events_genpy
+.PHONY : region_events_genpy
+
+# fast build rule for target.
+region_events_genpy/fast:
+	$(MAKE) -f region_events/CMakeFiles/region_events_genpy.dir/build.make region_events/CMakeFiles/region_events_genpy.dir/build
+.PHONY : region_events_genpy/fast
+
+#=============================================================================
+# Target rules for targets named region_events_node
+
+# Build rule for target.
+region_events_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 region_events_node
+.PHONY : region_events_node
+
+# fast build rule for target.
+region_events_node/fast:
+	$(MAKE) -f region_events/CMakeFiles/region_events_node.dir/build.make region_events/CMakeFiles/region_events_node.dir/build
+.PHONY : region_events_node/fast
+
+#=============================================================================
 # Target rules for targets named tf_real
 
 # Build rule for target.
@@ -5172,6 +5289,15 @@ help:
 	@echo "... hector_map_server"
 	@echo "... hector_trajectory_server"
 	@echo "... liftdrag_plugin"
+	@echo "... _region_events_generate_messages_check_deps_region_events"
+	@echo "... region_events_gencpp"
+	@echo "... region_events_generate_messages"
+	@echo "... region_events_generate_messages_cpp"
+	@echo "... region_events_generate_messages_lisp"
+	@echo "... region_events_generate_messages_py"
+	@echo "... region_events_genlisp"
+	@echo "... region_events_genpy"
+	@echo "... region_events_node"
 	@echo "... tf_real"
 	@echo "... tf_sim"
 	@echo "... rotors_gazebo_bag_plugin"

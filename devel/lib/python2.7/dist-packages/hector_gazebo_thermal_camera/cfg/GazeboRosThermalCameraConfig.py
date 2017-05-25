@@ -10,7 +10,7 @@ from dynamic_reconfigure.encoding import extract_params
 
 inf = float('inf')
 
-config_description = {'upper': 'DEFAULT', 'lower': 'groups', 'srcline': 235, 'name': 'Default', 'parent': 0, 'srcfile': '/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py', 'cstate': 'true', 'parentname': 'Default', 'class': 'DEFAULT', 'field': 'default', 'state': True, 'parentclass': '', 'groups': [], 'parameters': [{'srcline': 280, 'description': 'Sets the frame rate of the imager. In externally triggered mode this must be more than trig_rate', 'max': 50.0, 'cconsttype': 'const double', 'ctype': 'double', 'srcfile': '/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py', 'name': 'imager_rate', 'edit_method': '', 'default': 2.0, 'level': 3, 'min': 1.0, 'type': 'double'}], 'type': '', 'id': 0}
+config_description = {'upper': 'DEFAULT', 'lower': 'groups', 'srcline': 246, 'name': 'Default', 'parent': 0, 'srcfile': '/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py', 'cstate': 'true', 'parentname': 'Default', 'class': 'DEFAULT', 'field': 'default', 'state': True, 'parentclass': '', 'groups': [], 'parameters': [{'srcline': 293, 'description': 'Sets the frame rate of the imager. In externally triggered mode this must be more than trig_rate', 'max': 50.0, 'cconsttype': 'const double', 'ctype': 'double', 'srcfile': '/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py', 'name': 'imager_rate', 'edit_method': '', 'default': 2.0, 'level': 3, 'min': 1.0, 'type': 'double'}], 'type': '', 'id': 0}
 
 min = {}
 max = {}

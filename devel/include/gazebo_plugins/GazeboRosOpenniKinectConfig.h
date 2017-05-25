@@ -55,10 +55,10 @@ namespace gazebo_plugins
     class ParamDescription : public AbstractParamDescription
     {
     public:
-      ParamDescription(std::string name, std::string type, uint32_t level, 
-          std::string description, std::string edit_method, T GazeboRosOpenniKinectConfig::* f) :
-        AbstractParamDescription(name, type, level, description, edit_method),
-        field(f)
+      ParamDescription(std::string a_name, std::string a_type, uint32_t a_level, 
+          std::string a_description, std::string a_edit_method, T GazeboRosOpenniKinectConfig::* a_f) :
+        AbstractParamDescription(a_name, a_type, a_level, a_description, a_edit_method),
+        field(a_f)
       {}
 
       T (GazeboRosOpenniKinectConfig::* field);
@@ -141,7 +141,7 @@ namespace gazebo_plugins
     class GroupDescription : public AbstractGroupDescription
     {
     public:
-      GroupDescription(std::string name, std::string type, int parent, int id, bool s, T PT::* f) : AbstractGroupDescription(name, type, parent, id, s), field(f)
+      GroupDescription(std::string a_name, std::string a_type, int a_parent, int a_id, bool a_s, T PT::* a_f) : AbstractGroupDescription(a_name, a_type, a_parent, a_id, a_s), field(a_f)
       {
       }
 
@@ -240,7 +240,7 @@ class DEFAULT
 
 
 
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double imager_rate;
 //#line 218 "/opt/ros/indigo/share/dynamic_reconfigure/cmake/../templates/ConfigType.h.template"
 
@@ -367,6 +367,9 @@ class DEFAULT
   template <> // Max and min are ignored for strings.
   inline void GazeboRosOpenniKinectConfig::ParamDescription<std::string>::clamp(GazeboRosOpenniKinectConfig &config, const GazeboRosOpenniKinectConfig &max, const GazeboRosOpenniKinectConfig &min) const
   {
+    (void) config;
+    (void) min;
+    (void) max;
     return;
   }
 
@@ -377,21 +380,21 @@ class DEFAULT
     GazeboRosOpenniKinectConfigStatics()
     {
 GazeboRosOpenniKinectConfig::GroupDescription<GazeboRosOpenniKinectConfig::DEFAULT, GazeboRosOpenniKinectConfig> Default("Default", "", 0, 0, true, &GazeboRosOpenniKinectConfig::groups);
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.imager_rate = 1.0;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.imager_rate = 50.0;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.imager_rate = 2.0;
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(GazeboRosOpenniKinectConfig::AbstractParamDescriptionConstPtr(new GazeboRosOpenniKinectConfig::ParamDescription<double>("imager_rate", "double", 3, "Sets the frame rate of the imager. In externally triggered mode this must be more than trig_rate", "", &GazeboRosOpenniKinectConfig::imager_rate)));
-//#line 280 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 293 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(GazeboRosOpenniKinectConfig::AbstractParamDescriptionConstPtr(new GazeboRosOpenniKinectConfig::ParamDescription<double>("imager_rate", "double", 3, "Sets the frame rate of the imager. In externally triggered mode this must be more than trig_rate", "", &GazeboRosOpenniKinectConfig::imager_rate)));
-//#line 235 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 246 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.convertParams();
-//#line 235 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 246 "/opt/ros/indigo/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __group_descriptions__.push_back(GazeboRosOpenniKinectConfig::AbstractGroupDescriptionConstPtr(new GazeboRosOpenniKinectConfig::GroupDescription<GazeboRosOpenniKinectConfig::DEFAULT, GazeboRosOpenniKinectConfig>(Default)));
-//#line 353 "/opt/ros/indigo/share/dynamic_reconfigure/cmake/../templates/ConfigType.h.template"
+//#line 356 "/opt/ros/indigo/share/dynamic_reconfigure/cmake/../templates/ConfigType.h.template"
 
       for (std::vector<GazeboRosOpenniKinectConfig::AbstractGroupDescriptionConstPtr>::const_iterator i = __group_descriptions__.begin(); i != __group_descriptions__.end(); ++i)
       {
