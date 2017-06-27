@@ -1,0 +1,85 @@
+README
+
+
+Region Events
+- Overview
+Provides a ros service that can be launched to listen to the Gazebo topic '~region' and echo the contents onto the ros topic 'ros_regions'
+-
+
+Rover_GA
+- Overview
+Provides all needed files for running the Erle Rover in the GA framework
+- 
+
+- Updates for files
+-- obstacle_avoidance_GA
+--- v1.0 Basic obstacle avoidance script with  traits in behav genome
+--- v1.1 Adding behavior for turning sharply when gettig close to wall with new trait for how close to the wall this kicks in
+--
+
+-
+
+python_scripts
+- Overview
+Scripts for running the Erle Rover in the GA framework
+-
+
+- Updates for files
+-- rover_non_ga_server_obstacle_avoidance
+--- v1.0 Basic non_ga server complete
+--- v1.1 Moved socket comminication to the global scope to fix bug where only one VM was getting genomes
+--- v1.2
+--
+
+-- transport_controller
+--- v1.0 Basic transport controller finished
+--- v1.1 
+--
+
+-
+
+
+Rover Genome
+	Max_turn_strength
+
+		Integer:  [50-400]
+
+		Sets a cap on the turning radius of the rover.
+
+			At 50 the rover can turn at a yaw between 1450 and 1550, where 1500 is straight.
+
+			400 results in the rover being able to turn as sharp as it can
+
+		In simulation I do not know if this will be interesting to observe, but in real life if you the rover tries turning as sharp as it mechanically can at a high speed it will tip. 
+
+	Max_yaw_change_per_cb
+
+		Integer: [1-100]
+
+		Sets a cap on how much the yaw can change during each callback. The callback is tied to when lidar information is received and the default value for the simulated sensor is 10 Hz. Though we will have to pay attention to the scan frequency of the hardware we buy and adjust this accordingly.
+
+		This is to make the simulation more realistic where the tires cannot instantly swing between the two extremes. That behavior is not desirable either and having this will result in smoother turns.
+
+	Num_vision_cones
+
+		Odd integer: [1-101]
+
+		How many partitions the lidar scan is split into.
+
+		The greater the number the smoother the impact on yaw gradient is from center of the lidar scan to the outside.
+
+	Sweep_weight_factor
+
+		Float: [0-5] 
+
+		Impacts how much objects to the left or right of the rover affect the yaw. 
+
+	Distance_weight_factor:
+
+		Float: [0-5]
+
+		Impacts how much objects closer or further away from the rover affect the yaw.
+
+	Wall Distance:
+		Float: [0 - 10]
+		The distance at which the rover sees an object in the middle of it's vision, slows down and turns at max strength in the direction that it was already turning

@@ -7,8 +7,8 @@
                :planning_msgs-msg
 )
   :components ((:file "_package")
-    (:file "Octomap" :depends-on ("_package_Octomap"))
-    (:file "_package_Octomap" :depends-on ("_package"))
     (:file "PlannerService" :depends-on ("_package_PlannerService"))
     (:file "_package_PlannerService" :depends-on ("_package"))
+    (:file "Octomap" :depends-on ("_package_Octomap"))
+    (:file "_package_Octomap" :depends-on ("_package"))
   ))

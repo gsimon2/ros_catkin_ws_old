@@ -1,0 +1,85 @@
+<!--This work is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/4.0/.-->
+<launch>
+
+  <arg name="simRate" default="nan"/>
+  <!-- Enable simulation clock -->
+  <param name="use_sim_time" type="bool" value="true" />
+
+  <arg name="enable_logging" default="true"/>
+  <arg name="enable_ground_truth" default="true"/>
+  <arg name="log_file" default="rover"/>
+  <arg name="headless" default="false"/>
+  <arg name="gui" default="true"/>
+  
+  
+  <env name="GAZEBO_MODEL_PATH" value="$(find drcsim_model_resources)/gazebo_models/environments:$(find ardupilot_sitl_gazebo_plugin)/meshes/meshes_sensors:$(find ardupilot_sitl_gazebo_plugin)/meshes/meshes_outdoor:$(find ardupilot_sitl_gazebo_plugin)/meshes/meshes_warehouse"/>
+  
+  
+    <arg name="world_name" default="$(find rover_ga)/worlds/custom_mazes/custom_maze_1.sdf"/>
+  <!-- <arg name="world_name" value="$(find rover_ga)/worlds/single_object/single.world"/> -->
+  
+  
+  <arg name="name" default="rover"/>
+  <arg name="model" default="$(find ardupilot_sitl_gazebo_plugin)/urdf/rover.urdf"/>
+  <arg name="tf_prefix" default="$(optenv ROS_NAMESPACE)"/>
+  <arg name="debug" default="true"/>
+  <arg name="verbose" default="true"/>
+  <arg name="extra_gazebo_args" default="--seed 100"/>
+
+  <!-- Initial pose for the drone -->
+  <arg name="x" default="0.0"/> <!-- [m], positive to the North -->
+  <arg name="y" default="0.0"/> <!-- [m], negative to the East -->
+  <arg name="z" default="0.0"/> <!-- [m], positive Up -->
+  <arg name="roll" default="0"/> <!-- [rad] -->
+  <arg name="pitch" default="0"/> <!-- [rad] -->
+  <arg name="yaw" default="0"/> <!-- [rad], negative clockwise -->
+
+  <!-- send the robot XML to param server -->
+  <param name="robot_description" command="
+    $(find xacro)/xacro.py '$(arg model)'
+    enable_logging:=$(arg enable_logging)
+    enable_ground_truth:=$(arg enable_ground_truth)
+    log_file:=$(arg log_file)"
+  />
+    
+  
+  <param name="tf_prefix" type="string" value="$(arg tf_prefix)" />
+
+<!-- ********************* End Parameter/Argument Defaults ******************************** -->  
+
+  <!-- Start MAVROS -->
+  <!-- Port numbers are incremented by 10 for each instance / Future work pending -->
+  <include file="$(find mavros)/launch/apm_sitl.launch">
+    <arg name="gcs_url" default="udp://127.0.0.1@127.0.0.1:14550" />
+    <arg name="fcu_url" default="tcp://127.0.0.1:5760" />
+  </include>
+  
+  <!-- push robot_description to factory and spawn robot in gazebo -->
+  <node name="spawn_rover" pkg="gazebo_ros" type="spawn_model"
+   args="$(arg extra_gazebo_args)
+         -param robot_description
+         -urdf
+         -x $(arg x)
+         -y $(arg y)
+         -z $(arg z)
+         -R $(arg roll)
+         -P $(arg pitch)
+         -Y $(arg yaw)
+         -model $(arg name)"
+   respawn="false" output="screen">
+  </node>
+  
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="paused" value="true"/>   <!-- value unrelevant due to Arducopter plugin steps --> 
+    <arg name="headless" value="$(arg headless)"/>
+    <arg name="gui" value="$(arg gui)"/>
+    <arg name="world_name" value="$(arg world_name)"/>
+  </include>
+  
+  <!-- Load obstacle avoidance controller node -->
+  <!-- <node name="object_finder" pkg="rover_ga" type="obstacle_avoidance_GA.py" output="screen"></node> -->
+  
+  <!-- region reporter node -->
+  <node name="region_reporter" pkg="region_events" type="region_events_node" output="screen"></node>
+    
+</launch>

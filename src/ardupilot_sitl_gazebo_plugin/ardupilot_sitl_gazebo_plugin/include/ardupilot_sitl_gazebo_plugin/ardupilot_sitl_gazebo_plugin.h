@@ -105,7 +105,7 @@
 
 #define SERVO_PARACHUTE           9
 
-#define STEP_SIZE_FOR_ARDUPILOT    0.0025      // in [s], = 400 Hz
+#define STEP_SIZE_FOR_ARDUPILOT    0.0025      // in [s], = 400 Hz //default = 0.0025
 
 
 

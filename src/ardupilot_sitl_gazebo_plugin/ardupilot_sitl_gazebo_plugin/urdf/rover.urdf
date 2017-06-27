@@ -5,21 +5,21 @@
     <child link="front_left_wheel_steering_block"/>
     <origin rpy="-1.52 0 0" xyz="0.240444 0.1 0.07103"/>
     <axis xyz="0  -1  0"/>
-    <limit effort="10.0" lower="-0.7727" upper="0.7727" velocity="0.0"/>
+    <limit effort="20.0" lower="-0.7727" upper="0.7727" velocity="0.0"/>
   </joint>
   <joint name="front_right_steering_joint" type="revolute">
     <parent link="chassis"/>
     <child link="front_right_wheel_steering_block"/>
     <origin rpy="1.52 0 0" xyz="0.240444 -0.1 0.07103"/>
     <axis xyz="0  1  0"/>
-    <limit effort="10.0" lower="-0.7727" upper="0.7727" velocity="0.0"/>
+    <limit effort="20.0" lower="-0.7727" upper="0.7727" velocity="0.0"/>
   </joint>
   <joint name="front_left_wheel_joint" type="revolute">
     <parent link="front_left_wheel_steering_block"/>
     <child link="front_left_wheel"/>
     <origin rpy="0 0 0" xyz="0.0 0.0 0.043124"/>
     <axis xyz="0.00000000e+00 8.30000000e-04 1.00000000e+00"/>
-    <limit effort="10.0" lower="0" upper="0" velocity="0"/>
+    <limit effort="20.0" lower="0" upper="0" velocity="0"/>
   </joint>
   <joint name="front_right_wheel_joint" type="revolute">
     <parent link="front_right_wheel_steering_block"/>
@@ -349,11 +349,11 @@
    max_range="20.0"
    field_of_view_horizontal="${180*M_PI/180}"
    field_of_view_vertical="${1*M_PI/180}"
-   ray_count_horizontal="542"
+   ray_count_horizontal="542" 
    ray_count_vertical="1"
    sensor_mesh="lidar_lite_v2_withRay/meshes/lidar_lite_v2_withRay.dae">
    <origin xyz="0 0 0.4" rpy="0 0 0"/>
- </xacro:lidar_sensor>
+ </xacro:lidar_sensor><!-- 542 -->
 
 <!--
 <xacro:include filename="$(find ardupilot_sitl_gazebo_plugin)/urdf/sensors/sonar_sensor.urdf.xacro" />

@@ -12,7 +12,6 @@
 #include <ros/ros.h>
 
 #include <std_srvs/Empty.h>
-#include <world_step/step_world.h>
 
 #include <iostream>
 #include <std_msgs/String.h>

@@ -15,12 +15,13 @@ random.seed(10)
 
 Num_evaluation_workers = 1
 
-GA_IP_ADDR = '127.0.0.1'
+GA_IP_ADDR = '' #This can be provided as a command line argument, otherwise
+				# the it defaults to the computers IP address
 GA_SEND_PORT = 5000
 GA_RECV_PORT = 5010
 
 # How many genomes to test sending
-test_genome_num = 3
+test_genome_num = 10
 
  
 class senderThread(threading.Thread):
@@ -31,7 +32,7 @@ class senderThread(threading.Thread):
         self.num_genomes = num_genomes
  
     def run(self):
-        print("Gnome - center_spin_thresh, center_drive_thresh, center_stop_thresh, stopping_thresh")
+        print("Gnome - max_turn_strength, max_yaw_change_per_cb, num_vision_cones, sweep_weight_factor, distance_weight_factor")
         print("\t\t\t\tStarting Sender Thread:"+str(self.threadID))
         self.send_data()
         print("\t\t\t\tExiting Sender Thread:"+str(self.threadID))
@@ -48,24 +49,29 @@ class senderThread(threading.Thread):
                     {'sensor':'lidar', 'pos':[0,0,0.4], 'orient':[0,0,0]}
                     ],
                     'behavioral':[
-                    {'test':0}
+                    {'max_turn_strength':200}, #int, [50-400]
+                    {'max_yaw_change_per_cb':15}, #int, [0-100]
+                    {'num_vision_cones':7}, #int, [1-101], must be odd
+                    {'sweep_weight_factor':1},#float, [0-5]
+                    {'distance_weight_factor':1}#float, [0-5]
                     ]
                 }, 'fitness':-1.0}
         
-        for i in range(self.num_genomes/2+1):
-            ind['id'] = i+50
-            ind['genome']['behavioral'][0]['test'] = 0.4 + i * 0.1
+        for i in range(self.num_genomes):
+            ind['id'] = i
+            #ind['genome']['behavioral'][0]['max_turn_strength'] = random.randrange(50,400,1)
+            #ind['genome']['behavioral'][1]['max_yaw_change_per_cb'] = random.randrange(1,100,1)
+            #ind['genome']['behavioral'][2]['num_vision_cones'] = random.randrange(1,101,2)
+            #ind['genome']['behavioral'][3]['sweep_weight_factor'] = random.random()*5
+            #ind['genome']['behavioral'][4]['distance_weight_factor'] = random.random()*5
             msg = json.dumps(ind)
-            print(msg)
             socket.send(msg)
             
-        for i in range(self.num_genomes/2+1,self.num_genomes):
-            ind['id'] = i+50
-            #ind['genome']['physical'][0]['pos'][2] = 0.4 + i * 0.05
-            msg = json.dumps(ind)
-            print(msg)
-            socket.send(msg)
-            
+            #print genome
+            print(ind['id'])
+            for trait in ind['genome']['behavioral']:
+				print(trait)
+           
         for i in range(Num_evaluation_workers):
             ind['id'] = -1
             print('Sending finish msg')

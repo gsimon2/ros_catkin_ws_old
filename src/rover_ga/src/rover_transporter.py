@@ -18,9 +18,9 @@ def callback(data):
 # Setup the contexts for communicating with the outside server. 
 context = zmq.Context()
 receiver = context.socket(zmq.PULL)
-receiver.connect('tcp://127.0.0.1:5000')
+receiver.connect('tcp://10.0.1.11:5000')
 sender = context.socket(zmq.PUSH)
-sender.connect('tcp://127.0.0.1:5010')
+sender.connect('tcp://10.0.1.11:5010')
  
 # Setup the ROS topics for communicating with connected nodes.
 rospy.init_node('transporter',anonymous=True)
